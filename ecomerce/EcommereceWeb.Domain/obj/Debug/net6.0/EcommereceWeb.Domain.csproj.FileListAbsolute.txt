@@ -1,0 +1,12 @@
+D:\wejo\verison\v10\Ecommerce-main\ecomerce\EcommereceWeb.Domain\bin\Debug\net6.0\EcommereceWeb.Domain.deps.json
+D:\wejo\verison\v10\Ecommerce-main\ecomerce\EcommereceWeb.Domain\bin\Debug\net6.0\EcommereceWeb.Domain.dll
+D:\wejo\verison\v10\Ecommerce-main\ecomerce\EcommereceWeb.Domain\bin\Debug\net6.0\EcommereceWeb.Domain.pdb
+D:\wejo\verison\v10\Ecommerce-main\ecomerce\EcommereceWeb.Domain\obj\Debug\net6.0\EcommereceWeb.Domain.csproj.AssemblyReference.cache
+D:\wejo\verison\v10\Ecommerce-main\ecomerce\EcommereceWeb.Domain\obj\Debug\net6.0\EcommereceWeb.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\wejo\verison\v10\Ecommerce-main\ecomerce\EcommereceWeb.Domain\obj\Debug\net6.0\EcommereceWeb.Domain.AssemblyInfoInputs.cache
+D:\wejo\verison\v10\Ecommerce-main\ecomerce\EcommereceWeb.Domain\obj\Debug\net6.0\EcommereceWeb.Domain.AssemblyInfo.cs
+D:\wejo\verison\v10\Ecommerce-main\ecomerce\EcommereceWeb.Domain\obj\Debug\net6.0\EcommereceWeb.Domain.csproj.CoreCompileInputs.cache
+D:\wejo\verison\v10\Ecommerce-main\ecomerce\EcommereceWeb.Domain\obj\Debug\net6.0\EcommereceWeb.Domain.dll
+D:\wejo\verison\v10\Ecommerce-main\ecomerce\EcommereceWeb.Domain\obj\Debug\net6.0\refint\EcommereceWeb.Domain.dll
+D:\wejo\verison\v10\Ecommerce-main\ecomerce\EcommereceWeb.Domain\obj\Debug\net6.0\EcommereceWeb.Domain.pdb
+D:\wejo\verison\v10\Ecommerce-main\ecomerce\EcommereceWeb.Domain\obj\Debug\net6.0\ref\EcommereceWeb.Domain.dll

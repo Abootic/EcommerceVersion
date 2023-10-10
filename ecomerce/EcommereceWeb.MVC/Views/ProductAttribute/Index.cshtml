@@ -1,0 +1,221 @@
+﻿
+@model ProductAttributeVM
+
+
+
+
+<!-- / Navbar -->
+<!-- Content wrapper -->
+<div class="content-wrapper">
+    
+    <!-- Content -->
+    <div class="container-xxl flex-grow-1 container-p-y">
+        <h4 class="breadcrumb-wrapper py-3 mb-4"><span class="text-muted fw-light">أنشاء صفات المنتج المتغيرة  /</span> إنشاء منتج</h4>
+
+        <div class="content-body ">
+
+            <!-- Form wizard with step validation section start -->
+            <section id="validation">
+                <div class="card m-0">
+                    <div class="row m-2">
+                        <div class="col-12">
+                          
+                                
+                                        <!-- Step 1 -->
+                                        <h6>
+                                            <i class="step-icon"></i>
+                                            <span class=""> صفات المنتج المتغيرة</span>
+                                        </h6>
+
+    @if (TempData["err"] != null)
+    {
+        <div class="alert alert-danger">@TempData["err"]</div>
+    }
+    @if (TempData["suc"] != null)
+    {
+        <div class="alert alert-success">@TempData["suc"]</div>
+    }
+                                        <div class="tab-content mt-4">
+                                            <div class="tab-pane fade show active" id="navs-tabs-line-justified-home" role="tabpanel">
+
+                                                <div class=" mb-4  ms-0 me-0 border " style="border-radius: 5px;">
+                                                    <div class="row  bg-label-secondary border-bottom  m-0 " style="border-top-left-radius: 5px; border-top-right-radius: 5px; ">
+                                                        <div class="col">
+                                                            <h4 class="p-1 m-2 text-primary">   ضف بيانات صفات المنتج المتغيرة </h4>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="card-body mb-3">
+
+                                                        <!--toggle start-->
+                                                      <div class="row">
+                    @if (Model != null)
+                    {
+
+                        <div class="col-sm-6">
+                            <div class="form-group mb-50">
+
+                                <select class="form-select" id="variation">
+                                    <option> اختار</option>
+                                    @foreach (var item in Model.productVariationDto)
+                                    {
+                                        <option value="@item.ProductId">@item.EnName</option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+
+
+
+                    }
+                </div>
+                <div class="dropdown-divider"></div>
+              
+                <div class="col-12" id="create-variation"></div>
+@*                  <a class="btn btn-secondary"  asp-controller="ProductImage" asp-action="Create" asp-route-productId="@Model.productId">next</a>
+*@            
+                     <br />
+                                         <div class="row "> 
+                                             <div class="col-4 ">    
+                                               <div class="demo-inline-spacing">
+<a    asp-controller="ProductAttribute"  asp-action="Create" asp-route-productId="@Model.productId"  class="btn btn-primary m-1  mb-3 "   > السابق   </a>
+                                                                         
+                                             </div>
+                                             </div>
+                                       
+                                            <div class="col-8 text-end">  
+ <a   asp-controller="ProductImage" asp-action="Create" asp-route-productId="@Model.productId" class="btn btn-primary m-1  mb-3"   > التالي   </a>
+                                  </div> 
+                                      
+                                            
+                                           </div>
+
+
+
+                                            </div>
+                                        </div>
+                                        </div>
+
+                                       
+                                        <!-- body content of step 1 end -->
+                                        <!-- body content of step 1 -->
+                                        <!-- body content of step 1 end -->
+
+
+
+
+                               
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Form wizard with step validation section end -->
+        </div>
+    </div>
+    <!-- / Content -->
+   
+   
+
+    <div class="content-backdrop fade"></div>
+</div>
+
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script src="~/js/uploadFiles.js" asp-append-version="true"></script>
+
+    <script type="text/javascript">
+
+        function uploud() {
+
+            $("#upload").on('change', function () {
+
+                var files = $('#upload').prop("files");
+
+                let folderName = "variation";
+                uplodfile(files, folderName);
+            });
+
+            $('#fileBtn').click(function () { $('#upload').trigger('click'); });
+        }
+        $("#variation").on("change", function () {
+            var selectedOption = $("#variation option:selected");
+            var pid = $(this).val();
+            $("#ProductId").val(pid);
+            // Get the text of the selected option
+            var selectedText = selectedOption.text();
+            let url = "../ProductAttribute/CreateVariation";
+
+            let item = "";
+            jQuery.ajax({
+                method: "get",
+                url: url,
+                data: { "id": pid, "name": selectedText },
+                contentType: false,
+                beforeSend: function () {
+
+                    $("#create-variation").html("<span class='spinner-border spinner-border-sm' role ='status' aria - hidden='true' > </span>Loading...");
+                    //$(".send-btn").prop("disabled", true);
+                },
+                success: function (res) {
+
+                    
+                    $("#create-variation").html(res);
+
+                    /////////////////////////////////////////////////
+                    uploud();
+                    submitData();
+                    //////////////////////////////////////////////
+
+
+                },
+                error: function (ex) {
+                    alert("errrrrrrrrrr  " + ex.responseText);
+                }
+            });
+        });
+        function submitData() {
+
+            $("#ProductVariationDto").on("submit", (e) => {
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                let urlp = "../ProductAttribute/CreateVariation";
+                let datap = new FormData(document.getElementById("ProductVariationDto"));
+
+
+                jQuery.ajax({
+                    method: "post",
+                    url: urlp,
+                    data: datap,
+                    contentType: false,
+                    processData: false, cache: false,
+                    beforeSend: function () {
+
+                        $("#submit-btn").html("<span class='spinner-border spinner-border-sm' role ='status' aria - hidden='true' > </span>Loading...");
+                        $("#submit-btn").prop("disabled", true);
+                    },
+                    success: function (res1) {
+
+                        $("#submit-btn").prop("disabled", false);
+                        $("#submit-btn").html("اضافة");
+
+                        /////////////////////////////////////////////////
+
+                        alert("تمت الاضافة بنجاح");
+                        //////////////////////////////////////////////
+
+
+                    },
+                    error: function (ex) {
+                        alert("errrrrrrrrrr  " + ex.responseText);
+                    }
+                });
+
+            });
+        }
+    </script>
+}

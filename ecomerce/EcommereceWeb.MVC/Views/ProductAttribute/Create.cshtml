@@ -1,0 +1,420 @@
+﻿
+@model ProductAdditionalVM
+@inject IServiceManager serviceManager
+@{
+    var res = await serviceManager.AttributeService.GetAll();
+
+}
+
+
+
+
+<style>
+    #AttItem {
+        max-width: 100%;
+        width: 350px;
+    }
+
+    .vscomp-toggle-button {
+        padding: 10px 30px 10px 10px;
+        border-radius: 5px;
+    }
+
+    .container-c {
+        margin-top: 12px;
+        position: relative;
+        max-width: 347px;
+        width: 100%;
+        border-radius: 8px;
+        border: 1px solid #d4d8dd;
+    }
+
+    .select-btn {
+        display: flex;
+        height: 50px;
+        align-items: center;
+        padding: 0 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        background-color: #fff;
+        justify-content: space-between;
+    }
+
+    .slect-btn .arrow-down {
+        display: flex;
+        height: 21px;
+        width: 21px;
+        background-color: #6e93f7;
+        align-items: center;
+        justify-content: center;
+        transition: 0.3s;
+    }
+
+    .slect-btn .btn-text {
+        font-size: 17px;
+        font-weight: 400;
+        color: #333;
+    }
+
+    .list-item {
+        position: relative;
+        margin-top: 15px;
+        border-radius: 8px;
+        background-color: #fff;
+        display: none;
+        /*  box-shadow:0 5px 10px rgba(0,0,0.1);*/
+    }
+
+    .select-btn.open ~ .list-item {
+        display: block;
+    }
+
+    .select-btn.open .arrow-down {
+        transform: rotate(-180deg);
+    }
+
+    .list-item .item {
+        display: flex;
+        align-items: center;
+        list-style: none;
+        height: 30px;
+        transition: 0.3s;
+        border-radius: 8px;
+        justify-content: space-between;
+    }
+
+        .list-item .item:hover {
+            background-color: #e7edfe;
+        }
+
+    .item .checkbox {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 30px;
+        width: 30px;
+        border-radius: 6px;
+        margin-right: 20px;
+        margin-left: 20px;
+        border: 5px solid #c0c0c0;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .item.checked .checkbox {
+        background-color: #4070f4;
+        border-color: #4070f4;
+    }
+
+    .item .item-text {
+        font-size: 16px;
+        color: #333;
+        font-weight: 400;
+    }
+
+    .checkbox .check-icon {
+        font-size: 11px;
+        transform: scale(0);
+        transition: all 0.3s ease-in-out;
+        color: #fff;
+    }
+
+    .item.checked .check-icon {
+        transform: scale(1);
+    }
+</style>
+
+
+<!-- / Navbar -->
+<!-- Content wrapper -->
+<div class="content-wrapper">
+    
+    <!-- Content -->
+    <div class="container-xxl flex-grow-1 container-p-y">
+        <h4 class="breadcrumb-wrapper py-3 mb-4"><span class="text-muted fw-light">أنشاء صفات المنتج /</span> إنشاء منتج</h4>
+
+        <div class="content-body ">
+
+            <!-- Form wizard with step validation section start -->
+            <section id="validation">
+                <div class="card m-0">
+                    <div class="row m-2">
+                        <div class="col-12">
+                          
+                                    <form asp-controller="Attribute" asp-action="Create" method="post">
+                                        <!-- Step 1 -->
+                                        <h6>
+                                            <i class="step-icon"></i>
+                                            <span class="">اضافة صفات المنتج</span>
+                                        </h6>
+
+    @if (TempData["err"] != null)
+    {
+        <div class="alert alert-danger">@TempData["err"]</div>
+    }
+    @if (TempData["suc"] != null)
+    {
+        <div class="alert alert-success">@TempData["suc"]</div>
+    }
+                                        <div class="tab-content mt-4">
+                                            <div class="tab-pane fade show active" id="navs-tabs-line-justified-home" role="tabpanel">
+
+                                                <div class=" mb-4  ms-0 me-0 border " style="border-radius: 5px;">
+                                                    <div class="row  bg-label-secondary border-bottom  m-0 " style="border-top-left-radius: 5px; border-top-right-radius: 5px; ">
+                                                        <div class="col">
+                                                            <h4 class="p-1 m-2 text-primary"> حدد صفات المنتج</h4>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="card-body mb-3">
+
+                                                        <!--toggle start-->
+                                                        <div class="m-0 ">
+
+                                                            
+                                <div class="form-group mb-50">
+                                    <label class="text-bold-600" for="exampleInputEmail1">صفات المنتج </label>
+
+                                    <select class="form-select" id="Att">
+                                        @if (res.Status.Succeeded)
+                                        {
+                                            <option>اختار</option>
+                                            foreach (var item in res.Data)
+                                            {
+                                                <option value="@item.Id">@item.ArName</option>
+
+                                            }
+                                        }
+                                    </select>
+                                </div>
+
+                                <div class="form-group mb-50">
+                                    <div class="container-c">
+                                        <div class="select-btn">
+                                            <span class="btn-text">اختار</span>
+                                            <span class="arrow-down">
+                                                <img src="https://www.svgrepo.com/show/326564/chevron-down-circle-outline.svg" jsaction="VQAsE" class="r48jcc pT0Scc iPVvYb" style="    max-width: 800px;
+    height: 28px;
+    margin: 0px;
+    width: 28px;" alt="Chevron Down Circle Outline Vector SVG Icon - SVG Repo" jsname="kn3ccd" data-ilt="1695845198827">
+
+
+                                            </span>
+                                        </div>
+                                        <ul class="list-item">
+                                            <partial name="_checkBoxList" />
+
+
+                                        </ul>
+                                    </div>
+
+                                </div>
+                               <br />
+                         
+                                    <div class="row">
+                                       <div class="col-4 ">    
+                                               <div class="demo-inline-spacing">
+                                            <a class="btn btn-secondary m-1  mb-3" onclick="Clear()" style="color:#fff">الغاء التحديد</a>
+                                            </div>
+                                            </div>
+                                        <div class="col-8 text-end">
+                                            <input type="submit" class="btn alert-info m-1  mb-3" value="اضافة " id="attr-btn">
+                                            </div>
+                                    </div>
+
+                                
+                                                </div>
+
+
+                                       
+                                               
+                                          <br />
+                                          @{
+
+                    @if (TempData.GetTemp<int>("isIndex") == 0)
+            {
+                                            <div class="row "> 
+                                             <div class="col-4 ">    
+                                               <div class="demo-inline-spacing">
+                                            <a   asp-controller="Product" asp-action="Index"  class="btn btn-primary m-1  mb-3 "   > السابق   </a>
+                                                                         
+                                             </div>
+                                             </div>
+                                       
+                                            <div class="col-8 text-end">  
+                                            <a  asp-controller="ProductAttribute"  asp-action="Index" asp-route-productId="@Model.ProductId" class="btn btn-primary m-1  mb-3"   > التالي   </a>
+                                  </div> 
+                                      
+                                            
+                                           </div>            }}
+                                        
+                                            
+                                           </div>
+
+
+
+
+
+
+                                            </div>
+                                        </div>
+                                        </div>
+
+                                       
+                                        <!-- body content of step 1 end -->
+                                        <!-- body content of step 1 -->
+                                        <!-- body content of step 1 end -->
+
+
+
+
+                                    </form>
+                               
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Form wizard with step validation section end -->
+        </div>
+    </div>
+    <!-- / Content -->
+   
+    <form asp-controller="ProductAttribute" asp-action="Create" method="post" style="display:none">
+    <input type="hidden" asp-for="ProductId" value="@Model.ProductId">
+    <input type="hidden" asp-for="AttributeId" id="AttributeId">
+    <input type="hidden" asp-for="AttributeItemId" id="AttributeItemId">
+    <input type="hidden" asp-for="Name" id="name">
+
+    <div class="modal-footer d-inline-flex">
+        <a class="btn btn-secondary" asp-action="Index">Cancel</a>
+        <input type="submit" class="btn alert-info" value="Add Attribute" id="hidden-btn">
+    </div>
+
+</form>
+
+
+    <div class="content-backdrop fade"></div>
+</div>
+
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script type="text/javascript">
+
+        $("#attr-btn").on("click", function (e) {
+            e.preventDefault();
+            $("#hidden-btn").trigger("click");
+        });
+        let list = [];
+        let namelist = [];
+        function Clear(){
+
+            var selectElement = document.getElementById("Att");
+            selectElement.disabled = false;
+            list = [];
+             namelist = [];
+            window.location.reload();
+        }
+        $("#Att").on("change", function () {
+            //let list = [];
+            //let namelist = [];
+
+            var selectElement = document.getElementById("Att");
+            selectElement.disabled = true;
+
+            let id = $(this).val();
+            $("#AttributeId").val($(this).val());
+            let url = "../ProductAttribute/getAttrItems";
+            let item = "";
+            jQuery.ajax({
+                method: "get",
+                url: url,
+                data: { "id": id },
+                contentType: false,
+                success: function (res) {
+
+                    $(".list-item").html(res);
+                    //  document.getElementById("itemLI").style.backgroundColor = "red";
+                    const items = document.querySelectorAll(".item");
+
+                    items.forEach(item => {
+                        item.addEventListener("click", (e) => {
+
+                            item.classList.toggle("checked");
+
+                            let checked = document.querySelectorAll(".checked");
+                            let btnText = document.querySelector(".btn-text");
+                            console.log(checked.length);
+                            //if (checked && checked.length > 0) {
+
+                            //    console.log("vvvvvv " + checked.item.arguments["value"]);
+                            //} else {
+                            //    //  btnText.innerHTML = checked.length;
+                            //}
+                            $(document).on("click", ".item", function (e) {
+                                e.preventDefault();
+                                e.stopImmediatePropagation();
+                                let AttributeItemId = $(this).attr("value");
+                                let namevalue = $(this).attr("name-att");
+                                console.log("name-att  "+namevalue);
+
+                                if (list.length > 0 && namelist.length>0) {
+                                    let index = list.some(obj => obj === AttributeItemId);
+                                    let name = namelist.some(obj => obj === namevalue);
+                                    /////////////////////////////
+                                    if (index && name) {
+                                        list = list.filter(a => {
+                                            return a !== AttributeItemId;
+                                        });
+                                        //////////////////////////
+                                        namelist = namelist.filter(a => {
+                                            return a !== namevalue;
+                                        });
+                                        console.log("hi");
+
+                                    } else {
+                                        console.log("noo");
+                                        list.push( AttributeItemId);
+                                        namelist.push(namevalue);
+
+                                    }
+                                } else {
+                                    console.log("sssssssssssssssss");
+                                    list.push(AttributeItemId);
+                                    namelist.push(namevalue);
+                                }
+                                //  console.log("ttttttttttttt  " + v);
+                                console.log("listttttttttttt  "+JSON.stringify(list));
+                                console.log("nameListttttt    "+JSON.stringify(namelist));
+
+                                $("#AttributeItemId").val(list.toString());
+                                $("#name").val(namelist.toString());
+                            })
+                        });
+                    });
+
+                },
+                error: function (ex) {
+                    alert("errrrrrrrrrr  " + ex.responseText);
+                }
+            });
+        });
+
+
+        const selectBtn = document.querySelector(".select-btn");
+
+
+        selectBtn.addEventListener("click", (e) => {
+            selectBtn.classList.toggle("open");
+
+
+        });
+
+
+
+
+    </script>
+
+}

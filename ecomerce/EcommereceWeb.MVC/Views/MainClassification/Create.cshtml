@@ -1,0 +1,110 @@
+﻿@model MainClassificationDto
+<style>
+    #Image_Image {
+        border-radius: 13% !important;
+        height: 10rem;
+        width: 10rem;
+        background-repeat: no-repeat;
+        background-size: cover;
+        object-position: 50% 50%;
+    }
+
+    #img-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+</style>
+<div class="content-body">
+    <!-- login page start -->
+    
+    <section id="auth-login" class="row flexbox-container">
+        <div class="col-xl-8 col-11">
+            <div class="card bg-authentication mb-0">
+                <div class="row m-0">
+                    <!-- left section-login -->
+                    <div class="col-md-8 col-12 px-0">
+                        <div class="card disable-rounded-right mb-0 p-2 h-100 d-flex justify-content-center">
+                            <div class="card-header pb-1">
+                                <div class="card-title">
+                                    <h4 class="text-center mb-2">     اضف بيانات التصيف الرئيسي</h4>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                @if (TempData.ContainsKey("msg"))
+                                {
+                                    <div class="alert alert-warning">@TempData["msg"]</div>
+                                }
+                                <form asp-controller="MainClassification" asp-action="Create" method="post">
+                                    <input type="file" style="display:none" id="upload">
+                                    <input type="hidden" id="logoData" asp-for="ImageUrl">
+                                    <div class="media mb-2" id="img-container">
+                                        <div class="mb-1">
+                                            <a class="mr-2" href="javascript:void(0);">
+                                                <img src="../../../app-assets/images/portrait/small/avatar-s-26.jpg" id="Image_Image" class="users-avatar-shadow rounded-circle" height="70" width="70">
+                                            </a>
+                                            <span id="errorUplod1" class="badge badge-light-danger"> </span>
+                                        </div>
+                                        <div>
+                                            <div class="media-body">
+                                                @* <h4 class="media-heading">Avatar</h4>*@
+                                                <div class="col-12 px-0 d-flex">
+                                                    <a id="fileBtn" class="btn btn-sm btn-primary mr-10"   style="color:white;">اختار صورة</a>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-50">
+                                        <label class="text-bold-600" asp-for="ArMainClassificationName">  </label>
+                                        <input type="text" class="form-control" asp-for="ArMainClassificationName"  placeholder="ادخل الاسم العربي" >
+                                        <span asp-validation-for="ArMainClassificationName"></span>
+                                    </div>
+                                    <div class="form-group mb-50">
+                                        <label class="text-bold-600" asp-for="EnMainClassificationName">   </label>
+                                        <input type="text" class="form-control" asp-for="EnMainClassificationName" placeholder="ادخل الاسم بالانجليزي " >
+                                    </div>
+                                   
+
+
+                                    <div class="modal-footer d-inline-flex">
+                                        <a class="btn btn-secondary" asp-action="Index">الغاء</a>
+                                        <input type="submit" class="btn alert-info" value="اضافة  التصنيف ">
+                                    </div>
+
+                                </form>
+                                <hr>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- right section image -->
+                    <div class="col-md-4 d-md-block d-none text-center align-self-center p-3">
+                        <img class="img-fluid" src="~/app-assets/images/pages/login.png" alt="branding logo">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- login page ends -->
+
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script src="~/js/uploadFiles.js" asp-append-version="true"></script>
+    <script>
+        $("#upload").on('change', function () {
+
+            var files = $('#upload').prop("files");
+            console.log("1111111111111111");
+            let folderName = "MainClassification";
+            uplodfile(files, folderName);
+        });
+
+        $('#fileBtn').click(function () { $('#upload').trigger('click'); });
+
+    </script>
+
+}

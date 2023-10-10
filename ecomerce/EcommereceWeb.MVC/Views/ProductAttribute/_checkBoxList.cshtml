@@ -1,0 +1,21 @@
+﻿@model ProductAdditionalVM
+@if (Model.checkBoxListVms.Any())
+{
+    foreach(var item in Model.checkBoxListVms)
+    {
+        <li class="item" id="itemLI" value="@item.id" name-att="@item.name">
+              <a id="d" class="item-text">@item.name</a>
+            <span class="checkbox" id="attrbuit-id" >
+                <img src="https://svgsilh.com/svg/305615.svg" jsaction="VQAsE" class="check-icon"
+                     style="max-width: 3414px;
+    height: 20px;
+    margin: 0px;
+    width: 20px;" alt="SVG > check mark right - Free SVG Image &amp; Icon. | SVG Silh" jsname="kn3ccd" aria-hidden="false" data-ilt="1695848108693">
+            </span>
+        </li>
+
+    }
+
+}
+
+

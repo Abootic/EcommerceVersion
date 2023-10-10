@@ -1,0 +1,202 @@
+﻿@model IEnumerable<AttributeItemDto>
+
+     @{
+                if (TempData.GetTemp<int>("AttType") != null)
+                {
+                    var type = TempData.GetTemp<int>("AttType");
+                   
+                   
+                }
+                }
+
+<div class="content-wrapper">
+    <!-- Content -->
+    <div class="container-xxl flex-grow-1 container-p-y">
+        <h4 class="breadcrumb-wrapper py-3 mb-4"><span class="text-muted fw-light">   إداراة عناصر الصفات المتغيرة  /</span> الصفات المتغيرة  </h4>
+
+
+        <!-- Ajax Sourced Server-side -->
+        <div class="card">
+
+            <div class="row ">
+                <div class="col-md-6 text-start  mt-3  ps-4">
+                     @if (TempData.ContainsKey("AttName"))
+            {
+                    <h5 class="card-title mb-0 ms-2"> عناصر الصفات المتغيرة ل @TempData["AttName"]</h5>
+            }
+                
+            
+                </div>
+                <div class="col-md-6 text-end">
+
+                     @if (TempData.ContainsKey("AttId"))
+            {
+                        var Id = @TempData["AttId"];
+                         <div class="dt-buttons text-end me-3">
+                        <a class="dt-button create-new btn btn-primary mt-3" asp-controller="AttributeItem" asp-action="Create" asp-route-AttId="@Id" tabindex="0">اضافة عناصر </a>
+                                                <a class="dt-button create-new btn btn-secondary mt-3" asp-controller="Attribute" asp-action="index"  tabindex="0"> الرجوع </a>
+
+                    </div>
+                       
+            }
+            
+                </div>
+            </div>
+            @if (TempData.ContainsKey("msg"))
+            {
+                <div class="alert alert-warning">@TempData["msg"]</div>
+            }
+                   @if (TempData.ContainsKey("suc"))
+            {
+                                <div class="alert alert-warning">@TempData["suc"]</div>
+            }
+               @if (TempData.ContainsKey("didentDelete"))
+            {
+                                <div class="alert alert-warning">@TempData["didentDelete"]</div>
+            }  
+           
+                <!-- datatable start -->
+            @if (Model != null && Model.Any())
+            {
+                <div class="card-datatable text-nowrap">
+                    <table class="datatables-ajax table  ">
+                        <thead class="border-top">
+
+                            <tr>
+
+                                <th> @Html.DisplayNameFor(d=>d.Id)</th>
+                                <th> @Html.DisplayNameFor(d=>d.ArName)</th>
+                                <th>@Html.DisplayNameFor(d=>d.EnName)</th>
+                                <th>@Html.DisplayNameFor(d=>d.Code)</th>
+                                @{
+                                    if (TempData.GetTemp<int>("AttType") != null)
+                                    {
+                                    var type = TempData.GetTemp<int>("AttType");
+                   
+                                     if (type == 3){
+                                 <th>@Html.DisplayNameFor(d=>d.ColorCode)</th>
+
+                                 }
+                                }
+                                }
+                                
+                                <th>@Html.DisplayNameFor(d=>d.Details)</th>
+
+                                <th>الحالة </th>
+                                <th>تاريخ الاضافة </th>
+
+                                <th>الاجرءات</th>
+                            </tr>
+
+
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+
+
+                                    <td>@item.Id</td>
+                                    <td>@item.ArName</td>
+                                    @if (item.EnName != null)
+                                    {
+                                        <td>@item.EnName</td>
+                                    }
+                                    else
+                                    {
+                                        <td>------</td>
+                                    }
+                                    @if (item.Code != null)
+                                    {
+                                        <td>@item.Code</td>
+                                    }
+                                    else
+                                    {
+                                        <td>------</td>
+                                    }
+                                      @{
+                                    if (TempData.GetTemp<int>("AttType") != null)
+                                    {
+                                    var type = TempData.GetTemp<int>("AttType");
+                   
+                                     if (type == 3){
+                                        @if (item.ColorCode!= null)
+                                         {
+                                        <td>@item.ColorCode</td>
+                                          }
+                                         else
+                                            {
+                                        <td>------</td>
+                                            }
+                                    }
+                                   }
+                                }
+                                           
+                                        
+
+                                      @if (item.Details!= null)
+                                    {
+                                        <td>@item.Details</td>
+                                    }
+                                    else
+                                    {
+                                        <td>------</td>
+                                    }
+
+                                    <td>@item.IsActive</td>
+
+                                    @if (item.CreatedAt != null)
+                                    {
+                                        <td>@item.CreatedAt</td>
+                                    }
+                                    else
+                                    {
+                                        <td>------</td>
+                                    }
+
+                                  
+                                         <td>
+                                                <div class="btn-group dropend">
+                                                <button type="button" class="btn dropdown-toggle hide-arrow p-0" data-bs-toggle="dropdown">
+                                                    <i class="bx bx-dots-vertical-rounded"></i>
+                                                </button>
+                                                <div class="dropdown-menu mx-1">
+                                                   <a class="dropdown-item" asp-controller="AttributeItem" asp-action="Edit" asp-route-Id="@item.Id"> تعديل  </a>
+                                                <a class="dropdown-item" asp-controller="AttributeItem" asp-action="Delete" asp-route-Id="@item.Id"> حذف  </a>
+
+                                                    </div>
+
+
+                                                </div>
+                                            </td>
+                                </tr>
+                            }
+
+
+
+                        </tbody>
+                    </table>
+                </div>
+            }
+            else
+            {
+                <div class="alert alert-danger  m-5"> <center>لا توجد بيانات</center></div>
+            }
+
+        </div>
+        <!--/ Ajax Sourced Server-side -->
+
+
+
+        <div class="content-backdrop fade"></div>
+
+        <!-- Content wrapper -->
+    </div>
+    <!-- / Layout page -->
+</div>
+<!-- Overlay -->
+<div class="layout-overlay layout-menu-toggle"></div>
+
+<!-- Drag Target Area To SlideIn Menu On Small Screens -->
+<div class="drag-target"></div>
+

@@ -1,0 +1,530 @@
+﻿@using EcommereceWeb.Application.Services;
+@model  ProductDto
+@inject IServiceManager serverManager
+@{
+    var brand = await serverManager.BrandService.GetAll();
+    var mainclass = await serverManager.MainClassificationService.GetAll();
+    var res = await serverManager.AttributeService.GetAll();
+}
+<style>
+    #Image_Image {
+        border-radius: 10% !important;
+        height: 10rem;
+        width: 11rem;
+        background-repeat: no-repeat;
+        background-size: cover;
+        object-position: 50% 50%;
+    }
+
+    #img-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+   
+
+    button {
+        padding: 10px 20px;
+        background-color: #007BFF;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+    }
+
+        button.prev-step {
+            background-color: #ccc;
+        }
+
+        button[type="submit"] {
+            background-color: #28A745;
+        }
+
+    #AttItem {
+        max-width: 100%;
+        width: 350px;
+    }
+
+    .vscomp-toggle-button {
+        padding: 10px 30px 10px 10px;
+        border-radius: 5px;
+    }
+
+    .container-c {
+        margin-top: 12px;
+        position: relative;
+        max-width: 347px;
+        width: 100%;
+        border-radius: 8px;
+        border: 1px solid #d4d8dd;
+    }
+
+    .select-btn {
+        display: flex;
+        height: 50px;
+        align-items: center;
+        padding: 0 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        background-color: #fff;
+        justify-content: space-between;
+    }
+
+    .slect-btn .arrow-down {
+        display: flex;
+        height: 21px;
+        width: 21px;
+        background-color: #6e93f7;
+        align-items: center;
+        justify-content: center;
+        transition: 0.3s;
+    }
+
+    .slect-btn .btn-text {
+        font-size: 17px;
+        font-weight: 400;
+        color: #333;
+    }
+
+    .list-item {
+        position: relative;
+        margin-top: 15px;
+        border-radius: 8px;
+        background-color: #fff;
+        display: none;
+        /*  box-shadow:0 5px 10px rgba(0,0,0.1);*/
+    }
+
+    .select-btn.open ~ .list-item {
+        display: block;
+    }
+
+    .select-btn.open .arrow-down {
+        transform: rotate(-180deg);
+    }
+
+    .list-item .item {
+        display: flex;
+        align-items: center;
+        list-style: none;
+        height: 30px;
+        transition: 0.3s;
+        border-radius: 8px;
+        justify-content: space-between;
+    }
+
+        .list-item .item:hover {
+            background-color: #e7edfe;
+        }
+
+    .item .checkbox {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 30px;
+        width: 30px;
+        border-radius: 6px;
+        margin-right: 20px;
+        margin-left: 20px;
+        border: 5px solid #c0c0c0;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .item.checked .checkbox {
+        background-color: #4070f4;
+        border-color: #4070f4;
+    }
+
+    .item .item-text {
+        font-size: 16px;
+        color: #333;
+        font-weight: 400;
+    }
+
+    .checkbox .check-icon {
+        font-size: 11px;
+        transform: scale(0);
+        transition: all 0.3s ease-in-out;
+        color: #fff;
+    }
+
+    .item.checked .check-icon {
+        transform: scale(1);
+    }
+</style>
+<!-- / Navbar -->
+<!-- Content wrapper -->
+<div class="content-wrapper">
+   
+    <!-- Content -->
+    <div class="container-xxl flex-grow-1 container-p-y">
+        <h4 class="breadcrumb-wrapper py-3 mb-4"><span class="text-muted fw-light">أنشاء منتج جديد /</span> إنشاء منتج</h4>
+
+        <div class="content-body ">
+
+            <!-- Form wizard with step validation section start -->
+            <section id="validation">
+                <div class="card m-0">
+                    <div class="row m-2">
+                        <div class="col-12">
+                          
+                                    <form asp-controller="Product" asp-action="Create" method="post">
+                                        <!-- Step 1 -->
+                                        <h6>
+                                            <i class="step-icon"></i>
+                                            <span class="">المنتج</span>
+                                        </h6>
+                                         @if (TempData["err"] != null)
+                                         {
+                                             <div class="alert alert-danger">@TempData["err"]</div>
+                                         }
+                                         @if (TempData["suc"] != null)
+                                         {
+                                             <div class="alert alert-success">@TempData["suc"]</div>
+                                         }
+
+                                        <div class="tab-content mt-4">
+                                            <div class="tab-pane fade show active" id="navs-tabs-line-justified-home" role="tabpanel">
+
+                                                <div class=" mb-4  ms-0 me-0 border " style="border-radius: 5px;">
+                                                    <div class="row  bg-label-secondary border-bottom  m-0 " style="border-top-left-radius: 5px; border-top-right-radius: 5px; ">
+                                                        <div class="col">
+                                                            <h4 class="p-1 m-2 text-primary"> ضف بيانات المنتج</h4>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="card-body mb-3">
+
+                                                        <!--toggle start-->
+                                                        <div class="m-0 ">
+
+
+                                                            <div class="row justify-content-between ">
+
+                                                                <div class="col-md-4">
+                                                                    <div class="mb-3">
+                                                                        <label  asp-for="ArName" class="form-label"> </label>
+                                                                        <input type="text" asp-for="ArName" class="form-control required" placeholder="ادخل الاسم بالعربي">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-4">
+                                                                    <div class="mb-3">
+                                                                        <label for="Name3" asp-for="EnName" class="form-label"> </label>
+                                                                        <input type="text" asp-for="EnName" class="form-control required " id="Name3" placeholder="   ادخل الاسم بالانجليزي ">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-4">
+                                                                    <div class="mb-3">
+                                                                        <label for="Name3" asp-for="BrandId" class="form-label"> الماركة</label>
+                                                                        <select class="form-select required" asp-for="BrandId" id="class4" >
+                                                                            <option value="">   اختار الماركة</option>
+                                                                            @foreach (var brandItem in brand.Data)
+                                                                            {
+                                                                                <option value="@brandItem.Id"> @brandItem.ArName</option>
+
+                                                                            }
+
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+
+
+
+                                                            </div>
+
+                                                            <div class="row justify-content-between ">
+
+                                                                <div class="col-sm-4">
+                                                                    <div class="mb-3 ">
+                                                                        <label class="form-label" asp-for="MinOrderQuantity" for="phone"> </label>
+                                                                        <input type="number" asp-for="MinOrderQuantity" class="form-control  " id="phone" placeholder="اقل كمية يمكن يطلبها ">
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-sm-4">
+                                                                    <div class="mb-3 ">
+                                                                        <label class="form-label" asp-for="MaxOrderQuantity" for="phone1"> </label>
+                                                                        <input type="number" asp-for="MaxOrderQuantity" class="form-control  " id="phone1" placeholder="اكثر كمية يمكن يطلبها ">
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-md-4">
+                                                                    <div class="mb-3">
+                                                                        <label class="form-label" asp-for="Discount" for="b"></label>
+                                                                        <input type="number" asp-for="Discount" class="form-control  " id="dis" placeholder=" نسبة الخصم للمنتج   ">
+
+                                                                    </div>
+
+                                                                </div>
+
+                                                                <div class="row justify-content-between ">
+                                                                    <div class="col-md-4">
+
+
+
+                                                                        <label class="form-label" for="">   نصنيفات المنتج </label>
+                                                                        <div class="container border p-3 " style="border-radius:7px">
+                                                                            <div class="mb-3">
+                                                                                <label class="form-label" for="city"> التصنيف الرئيسي </label>
+                                                                                <select class="form-select " id="mainClassFicationId" asp-for="MainClassificationId">
+                                                                                    <option value="">اختار التصنيف الرئيسي</option>
+                                                                                    @foreach (var mainClassItem in mainclass.Data)
+                                                                                    {
+                                                                                        <option value="@mainClassItem.Id"> @mainClassItem.ArMainClassificationName</option>
+                                                                                    }
+
+
+                                                                                </select>
+                                                                            </div>
+                                                                            <div class="mb-3">
+                                                                                <label class="form-label" for="mod"> التصنيف الاساسي </label>
+                                                                                <select class="form-select required" id="biskId" asp-for="BasicClassificationId">
+                                                                                    <option value="">اختار التصنيف الاساسي</option>
+
+                                                                                </select>
+                                                                            </div>
+                                                                            <div class="mb-3">
+                                                                                <label class="form-label" for="date"> التصنيف الفرعي  </label>
+                                                                                <select class="form-select required" id="subBase-Id" asp-for="SubClassificationBaseId">
+                                                                                    <option value="">اختار التصنيف الفرعي</option>
+
+                                                                                </select>
+                                                                            </div>
+
+                                                                            <div class="mb-3">
+                                                                                <label class="form-label" for="date"> التصنيف فرعي الفرعي  </label>
+                                                                                <select class="form-select required" id="sub-id" asp-for="SubSubclassificationId">
+                                                                                    <option value=""> التصنيف فرعي الفرعي</option>
+
+                                                                                </select>
+                                                                            </div>
+
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-4">
+
+
+                                                                        <label class="form-label" for=""> وصف المنتج </label>
+                                                                        <div class="container border  p-3 " style="border-radius:7px">
+
+                                                                            <div class="mb-3">
+                                                                                <label class="form-label" asp-for=" ArDetails" for="mod2"> </label>
+                                                                                <textarea rows="2" asp-for=" ArDetails" class="form-control required" id="mod2" placeholder="ادخل الوصف بالعربي "></textarea>
+                                                                            </div>
+                                                                            <div class="mb-3">
+                                                                                <label class="form-label" asp-for=" EnDetails" for="ozla">  </label>
+                                                                                <textarea rows="2" asp-for=" EnDetails" class="form-control required" id="ozla" placeholder="  ادخل الوصف بالانجليزي"></textarea>
+                                                                            </div>
+                                                                            <div class="mb-3">
+                                                                                <label class="form-label" asp-for=" ArKeyWords" for="ozla">  </label>
+                                                                                <textarea rows="3" asp-for=" ArKeyWords" class="form-control required" id="ozla" placeholder="  ادخل الكلمات المفتاحية  "></textarea>
+                                                                                <input type="hidden" asp-for="EnKeyWords" class="form-control  " value="ass">
+
+                                                                            </div>
+                                                                           
+                                                                        </div>
+
+
+                                                                    </div>
+                                                                 
+
+                                                                    <div class="col-md-4">
+                                                                        <input type="file" style="display:none" id="upload">
+
+                                                                        <input type="hidden" id="logoData" asp-for=" Logo">
+                                                                        <label class="form-label" for="">   الصورة الرئسية للمنتج</label>
+                                                                        <div class="container border  p-3 " style="border-radius:7px">
+
+                                                                            <div class="mb-11">
+                                                                                <a class="mr-2" href="javascript:void(0);">
+                                                                                    <img src="../../../app-assets/images/portrait/small/avatar-s-26.jpg" id="Image_Image" class="users-avatar-shadow rounded-circle" height="70" width="70">
+                                                                                </a>
+                                                                                <span id="errorUplod1" class="badge badge-light-danger"> </span>
+                                                                            </div>
+                                                                            <br />
+                                                                            <div class="media-body">
+                                                                                @* <h4 class="media-heading">Avatar</h4>*@
+                                                                                <div class="col-12 px-0 d-flex">
+                                                                                    <a id="fileBtn" class="btn  btn-primary " style="color:white;">اختار صورة  </a>
+
+                                                                                </div>
+                                                                            </div>
+                                                                            <br />
+                                                                              <div class="mb-3">
+                                                                                <label class="form-label" asp-for="TaxType">   الضريبة  </label>
+                                                                                <select class="form-select required" asp-for="TaxType">
+                                                                                    <option>  هل يوجد ضريبة</option>
+                                                                                    <option value="0"> يوجد ضريبة</option>
+                                                                                    <option value="1"> لا يوجد ضريبة</option>
+
+                                                                                </select>
+                                                                        </div>
+                                                                        <br />
+                                                                       
+                                                                    </div>
+                                                                    <br />
+                                                                <input type="submit" class="btn btn-primary mr-5" value="اضافة ">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+@*
+                                        <div class="modal-footer d-inline-flex" style="justify-content:space-between">
+                                            <button class="prev-step">Previous</button>
+                                            <a class="next-step" asp-controller="ProductAttribute"  asp-action="Create" asp-route-productId="@Model.Id">Next</a>
+
+
+                                        </div>
+                                          *@     
+                                           <div class="row "> 
+                                             <div class="col-4 ">    
+                                               <div class="demo-inline-spacing">
+<a   asp-controller="Authorised" asp-action="Create"  class="btn btn-primary m-1  mb-3 "   > السابق   </a>
+                                                                         
+                                             </div>
+                                             </div>
+                                       
+                                            <div class="col-8 text-end">  
+ <a  asp-controller="ProductAttribute"  asp-action="Create" asp-route-productId="@Model.Id" class="btn btn-primary m-1  mb-3"   > التالي   </a>
+                                  </div> 
+                                      
+                                            
+                                           </div>
+
+
+
+
+
+
+                                            </div>
+                                        </div>
+                                        </div>
+
+                                       
+                                        <!-- body content of step 1 end -->
+                                        <!-- body content of step 1 -->
+                                        <!-- body content of step 1 end -->
+
+
+
+
+                                    </form>
+                               
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Form wizard with step validation section end -->
+        </div>
+    </div>
+    <!-- / Content -->
+   
+
+
+
+    <div class="content-backdrop fade"></div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script src="~/js/uploadFiles.js" asp-append-version="true"></script>
+    <script type="text/javascript">
+
+
+
+        $("#mainClassFicationId").on("change", function () {
+            let mainClassficationId = $(this).val();
+            let url = "../BasicClassification/GetmainBisikClassFication";
+            let item = "";
+            let data = { "mainClassficationId": mainClassficationId };
+            jQuery.ajax({
+                method: "get",
+                url: url,
+                data: data,
+                contentType: false,
+                success: function (res) {
+                    res.map(a => {
+                        item += `<option value="${a.id}">${a.name}</option>`;
+                        getsubClassficationBase(a.id);
+                    });
+                    $("#biskId").html(item);
+                },
+                error: function (ex) {
+                    alert("errrrrrrrrrr  " + ex.responseText);
+                }
+            });
+
+
+        });
+
+        function getsubClassficationBase(id) {
+
+            let url = "../SubClassificationBase/GetSubclassFicationBase";
+            let item = "";
+            let data = { "bisikId": id };
+            jQuery.ajax({
+                method: "get",
+                url: url,
+                data: data,
+                contentType: false,
+                success: function (res) {
+                    res.map(a => {
+                        item += `<option value="${a.id}">${a.name}</option>`;
+                        getsubClassfication(a.id);
+                    });
+                    $("#subBase-Id").html(item);
+                },
+                error: function (ex) {
+                    alert("errrrrrrrrrr  " + ex.responseText);
+                }
+            });
+
+
+
+        }
+        function getsubClassfication(id) {
+            let url = "../SubSubclassification/GetSubclassFication";
+            let item = "";
+            let data = { "subId": id };
+            jQuery.ajax({
+                method: "get",
+                url: url,
+                data: data,
+                contentType: false,
+                success: function (res) {
+                    res.map(a => {
+                        item += `<option value="${a.id}">${a.name}</option>`;
+
+                    });
+                    $("#sub-id").html(item);
+                },
+                error: function (ex) {
+                    alert("errrrrrrrrrr  " + ex.responseText);
+                }
+            });
+
+
+
+        }
+   
+
+
+
+
+        $("#upload").on('change', function () {
+
+            var files = $('#upload').prop("files");
+
+            let folderName = "Product";
+            uplodfile(files, folderName);
+        });
+
+        $('#fileBtn').click(function () { $('#upload').trigger('click'); });
+    </script>
+
+}

@@ -1,0 +1,268 @@
+﻿@model IEnumerable<ProductDto>
+<!-- BEGIN: Content-->
+
+
+<div class="content-wrapper">
+    <!-- Content -->
+    <div class="container-xxl flex-grow-1 container-p-y">
+        <h4 class="breadcrumb-wrapper py-3 mb-4"><span class="text-muted fw-light">  إداراة المنتجات   /</span>   المنتجات  </h4>
+
+
+        <!-- Ajax Sourced Server-side -->
+        <div class="card">
+
+            <div class="row ">
+                <div class="col-md-6 text-start  mt-3  ps-4">
+                    <h5 class="card-title mb-0 ms-2">  المنتجات </h5>
+                </div>
+                <div class="col-md-6 text-end">
+
+                    <div class="dt-buttons text-end me-3">
+                        <a class="dt-button create-new btn btn-primary mt-3" asp-controller="Product" asp-action="Index"  tabindex="0">اضافة   منتج جديد </a>
+                       
+                    </div>
+                </div>
+            </div>
+            @if (TempData.ContainsKey("msg"))
+            {
+                                <div class="alert alert-warning">@TempData["msg"]</div>
+            } 
+            @if (TempData.ContainsKey("suc"))
+            {
+                                <div class="alert alert-warning">@TempData["suc"]</div>
+            }
+               @if (TempData.ContainsKey("didentDelete"))
+            {
+                                <div class="alert alert-warning">@TempData["didentDelete"]</div>
+            }
+                        <!-- datatable start -->
+            @if (Model != null && Model.Any())
+            {
+                <div class="card-datatable text-nowrap">
+                    <table class="datatables-ajax table  ">
+                        <thead class="border-top">
+
+                            <tr>
+
+                                <th> @Html.DisplayNameFor(d=>d.Id)</th>
+                                <th> @Html.DisplayNameFor(d=>d.Logo)</th>
+                                <th> @Html.DisplayNameFor(d=>d.ArName)</th>
+                                <th> @Html.DisplayNameFor(d=>d.EnName)</th>
+                                <th> @Html.DisplayNameFor(d=>d.MinOrderQuantity)</th>
+                                <th> @Html.DisplayNameFor(d=>d.MaxOrderQuantity)</th>
+                                <th> @Html.DisplayNameFor(d=>d.Discount)</th>
+                                <th> @Html.DisplayNameFor(d=>d.TaxType)</th>
+                                <th> @Html.DisplayNameFor(d=>d.ArDetails)</th>
+                                <th> @Html.DisplayNameFor(d=>d.EnDetails)</th>
+                                <th> @Html.DisplayNameFor(d=>d.ArKeyWords)</th>
+                                <th> @Html.DisplayNameFor(d=>d.BrandId)</th>
+                                <th> @Html.DisplayNameFor(d=>d.MainClassificationId)</th>
+                                <th> @Html.DisplayNameFor(d=>d.BasicClassificationId)</th>
+                                <th> @Html.DisplayNameFor(d=>d.SubClassificationBaseId)</th>
+                                <th> @Html.DisplayNameFor(d=>d.SubSubclassificationId)</th>
+                                
+                                <th>الحالة </th>
+                                <th>تاريخ الاضافة </th>
+
+                                <th>الاجرءات</th>
+                            </tr>
+
+
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                    <tr>
+
+
+                                        <td>@item.Id</td>
+                                    @if (item.Logo != null)
+                                    {
+                                            <td>
+                                                <img src="../../Upload/Product/@item.Logo" id="Image_Image" class="users-avatar-shadow rounded-circle" height="70" width="70">
+
+                                            </td>              
+                                    }
+                                    else
+                                    {
+
+                                            <td>
+                                                <img src="../../../app-assets/images/portrait/small/avatar-s-26.jpg" id="Image_Image" class="users-avatar-shadow rounded-circle" height="70" width="70">
+
+                                            </td>   
+                                    }
+                                    @if (item.ArName != null)
+                                    {
+                                                <td>@item.ArName</td>
+                                    }
+                                    else
+                                    {
+                                                <td>------</td>
+                                    }
+                                     @if (item.EnName != null)
+                                    {
+                                                <td>@item.EnName</td>
+                                    }
+                                    else
+                                    {
+                                                <td>------</td>
+                                    }
+
+                                    @if (item.MinOrderQuantity != null)
+                                    {
+                                                <td>@item.MinOrderQuantity</td>
+                                    }
+                                    else
+                                    {
+                                                <td>------</td>
+                                    }
+                                      @if (item.MaxOrderQuantity != null)
+                                    {
+                                                <td>@item.MaxOrderQuantity</td>
+                                    }
+                                    else
+                                    {
+                                                <td>------</td>
+                                    }
+                                      @if (item.Discount != null)
+                                    {
+                                                <td>@item.Discount</td>
+                                    }
+                                    else
+                                    {
+                                                <td>------</td>
+                                    }
+                                      @if (item.TaxType != null)
+                                    {
+                                                <td>@item.TaxType</td>
+                                    }
+                                    else
+                                    {
+                                                <td>------</td>
+                                    }
+                                      @if (item.ArDetails != null)
+                                    {
+                                                <td>@item.ArDetails</td>
+                                    }
+                                    else
+                                    {
+                                                <td>------</td>
+                                    }
+                                      @if (item.EnDetails != null)
+                                    {
+                                                <td>@item.EnDetails</td>
+                                    }
+                                    else
+                                    {
+                                                <td>------</td>
+                                    }
+                                      @if (item.ArKeyWords != null)
+                                    {
+                                                <td>@item.ArKeyWords</td>
+                                    }
+                                    else
+                                    {
+                                                <td>------</td>
+                                    }
+                                       @if (item.BrandId != null)
+                                    {
+                                                <td>@item.BrandId</td>
+                                    }
+                                    else
+                                    {
+                                                <td>------</td>
+                                    }
+                                       @if (item.MainClassificationId != null)
+                                    {
+                                                <td>@item.MainClassificationId</td>
+                                    }
+                                    else
+                                    {
+                                                <td>------</td>
+                                    }
+                                       @if (item.BasicClassificationId != null)
+                                    {
+                                                <td>@item.BasicClassificationId</td>
+                                    }
+                                    else
+                                    {
+                                                <td>------</td>
+                                    }
+                                       @if (item.SubClassificationBaseId != null)
+                                    {
+                                                <td>@item.SubClassificationBaseId</td>
+                                    }
+                                    else
+                                    {
+                                                <td>------</td>
+                                    }
+                                       @if (item.SubSubclassificationId != null)
+                                    {
+                                                <td>@item.SubSubclassificationId</td>
+                                    }
+                                    else
+                                    {
+                                                <td>------</td>
+                                    }
+
+
+                                        <td>@item.IsActive</td>
+
+                                    @if (item.CreatedAt != null)
+                                    {
+                                                <td>@item.CreatedAt</td>
+                                    }
+                                    else
+                                    {
+                                                <td>------</td>
+                                    }
+
+                                             <td>
+                                                <div class="btn-group dropend">
+                                                <button type="button" class="btn dropdown-toggle hide-arrow p-0" data-bs-toggle="dropdown">
+                                                    <i class="bx bx-dots-vertical-rounded"></i>
+                                                </button>
+                                                <div class="dropdown-menu mx-1">
+                                                        <a class="dropdown-item" asp-controller="Product" asp-action="Edit" asp-route-Id="@item.Id"> تعديل  </a>
+                                                        <a class="dropdown-item" asp-controller="Product" asp-action="Delete" asp-route-Id="@item.Id"> حذف  </a>
+                                                        <a class="dropdown-item" asp-controller="ProductAttribute" asp-action="IndexProductAttribute" asp-route-id="@item.Id">   صفات المنتج  </a>
+                                                        <a class="dropdown-item" asp-controller="ProductVariation" asp-action="Index" asp-route-id="@item.Id">   متغيرات المنتج  </a>
+                                                        <a class="dropdown-item" asp-controller="ProductAdditionalDetails" asp-action="Index" asp-route-id="@item.Id">   البيانات الاضافية للمنتج  </a>
+                                                        <a class="dropdown-item" asp-controller="ProductImage" asp-action="Index" asp-route-id="@item.Id">   صور  المنتج  </a>
+
+                                                    </div>
+
+
+                                                </div>
+                                            </td>
+                                    </tr>
+                            }
+
+
+
+                        </tbody>
+                    </table>
+                </div>
+            }
+            else
+            {
+                    <div class="alert alert-danger  m-5"> <center>لا توجد بيانات</center></div>
+            }
+         
+        </div>
+        <!--/ Ajax Sourced Server-side -->
+
+
+
+        <div class="content-backdrop fade"></div>
+
+        <!-- Content wrapper -->
+    </div>
+    <!-- / Layout page -->
+</div>
+<!-- Overlay -->
+<div class="layout-overlay layout-menu-toggle"></div>
+
+<!-- Drag Target Area To SlideIn Menu On Small Screens -->
+<div class="drag-target"></div>
+

@@ -1,0 +1,126 @@
+﻿@model BasicClassificationDto
+<style>
+    #Image_Image {
+        border-radius: 13% !important;
+        height: 10rem;
+        width: 10rem;
+        background-repeat: no-repeat;
+        background-size: cover;
+        object-position: 50% 50%;
+    }
+
+    #img-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+</style>
+<div class="content-body">
+    <!-- login page start -->
+   
+    <section id="auth-login" class="row flexbox-container">
+        <div class="col-xl-8 col-11">
+            <div class="card bg-authentication mb-0">
+                <div class="row m-0">
+                    <!-- left section-login -->
+                    <div class="col-md-8 col-12 px-0">
+                        <div class="card disable-rounded-right mb-0 p-2 h-100 d-flex justify-content-center">
+                            <div class="card-header pb-1">
+                                <div class="card-title">
+                                    @{
+                                        if (TempData.GetTemp<string>("name") != null)
+                                        {
+                                            var name = TempData.GetTemp<string>("name");
+
+                                            <h4 class="text-center mb-2">   اضف بيانات التصنيف الاساسي لي @name  </h4>
+                                        }
+
+                                    }
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                  @if (TempData.ContainsKey("msg"))
+                                {
+                                    <div class="alert alert-warning">@TempData["msg"]</div>
+                                }
+                                <form asp-controller="BasicClassification" asp-action="Create" method="post">
+
+                                    <input type="file" style="display:none" id="upload">
+                                    <input type="hidden" asp-for="MainClassificationId">
+                                    <input type="hidden" id="logoData" asp-for="ImageUrl">
+                                    <div class="media mb-2" id="img-container">
+                                        <div class="mb-1">
+                                            <a class="mr-2" href="javascript:void(0);">
+                                                <img src="../../../app-assets/images/portrait/small/avatar-s-26.jpg" id="Image_Image" class="users-avatar-shadow rounded-circle" height="70" width="70">
+                                            </a>
+                                            <span id="errorUplod1" class="badge badge-light-danger"> </span>
+                                        </div>
+                                        <div>
+                                            <div class="media-body">
+                                                @* <h4 class="media-heading">Avatar</h4>*@
+                                                <div class="col-12 px-0 d-flex">
+                                                    <a id="fileBtn" class="btn btn-sm btn-primary mr-10" style="color:white;">اختار صورة</a>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-50">
+                                        <label class="text-bold-600" asp-for="ArBasicClassificationName">  </label>
+                                        <input type="text" class="form-control" asp-for="ArBasicClassificationName" placeholder="ادخل الاسم العربي">
+                                        <span asp-validation-for="ArBasicClassificationName"></span>
+                                    </div>
+                                    <div class="form-group mb-50">
+                                        <label class="text-bold-600" asp-for="EnBasicClassificationName">   </label>
+                                        <input type="text" class="form-control" asp-for="EnBasicClassificationName"  placeholder="ادخل الاسم بالانجليزي ">
+                                    </div>
+
+                                   <div class="modal-footer d-inline-flex">
+                                          @{
+
+                    @if (TempData.GetTemp<int>("MainClassificationId") != 0)
+            {
+                       int mainId = TempData.GetTemp<int>("MainClassificationId");
+                       
+                                        <a class="btn btn-secondary" asp-action="Index" asp-route-MainClassificationId="@mainId">الغاء</a>
+                                      }
+            }
+                                        <input type="submit" class="btn alert-info" value=" اضافة ">
+                                    </div>
+            
+                                </form>
+                                <hr>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- right section image -->
+                    <div class="col-md-4 d-md-block d-none text-center align-self-center p-3">
+                        <img class="img-fluid" src="~/app-assets/images/pages/login.png" alt="branding logo">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- login page ends -->
+
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script src="~/js/uploadFiles.js" asp-append-version="true"></script>
+    <script>
+        $("#upload").on('change', function () {
+
+            var files = $('#upload').prop("files");
+          
+            let folderName = "BasicClassification";
+            uplodfile(files, folderName);
+        });
+
+        $('#fileBtn').click(function () { $('#upload').trigger('click'); });
+
+    </script>
+
+}

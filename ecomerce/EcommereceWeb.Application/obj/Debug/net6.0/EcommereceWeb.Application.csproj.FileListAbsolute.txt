@@ -1,0 +1,15 @@
+D:\wejo\verison\v10\Ecommerce-main\ecomerce\EcommereceWeb.Application\bin\Debug\net6.0\EcommereceWeb.Application.deps.json
+D:\wejo\verison\v10\Ecommerce-main\ecomerce\EcommereceWeb.Application\bin\Debug\net6.0\EcommereceWeb.Application.dll
+D:\wejo\verison\v10\Ecommerce-main\ecomerce\EcommereceWeb.Application\bin\Debug\net6.0\EcommereceWeb.Application.pdb
+D:\wejo\verison\v10\Ecommerce-main\ecomerce\EcommereceWeb.Application\bin\Debug\net6.0\EcommereceWeb.Domain.dll
+D:\wejo\verison\v10\Ecommerce-main\ecomerce\EcommereceWeb.Application\bin\Debug\net6.0\EcommereceWeb.Domain.pdb
+D:\wejo\verison\v10\Ecommerce-main\ecomerce\EcommereceWeb.Application\obj\Debug\net6.0\EcommereceWeb.Application.csproj.AssemblyReference.cache
+D:\wejo\verison\v10\Ecommerce-main\ecomerce\EcommereceWeb.Application\obj\Debug\net6.0\EcommereceWeb.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\wejo\verison\v10\Ecommerce-main\ecomerce\EcommereceWeb.Application\obj\Debug\net6.0\EcommereceWeb.Application.AssemblyInfoInputs.cache
+D:\wejo\verison\v10\Ecommerce-main\ecomerce\EcommereceWeb.Application\obj\Debug\net6.0\EcommereceWeb.Application.AssemblyInfo.cs
+D:\wejo\verison\v10\Ecommerce-main\ecomerce\EcommereceWeb.Application\obj\Debug\net6.0\EcommereceWeb.Application.csproj.CoreCompileInputs.cache
+D:\wejo\verison\v10\Ecommerce-main\ecomerce\EcommereceWeb.Application\obj\Debug\net6.0\EcommereceWeb.Application.csproj.CopyComplete
+D:\wejo\verison\v10\Ecommerce-main\ecomerce\EcommereceWeb.Application\obj\Debug\net6.0\EcommereceWeb.Application.dll
+D:\wejo\verison\v10\Ecommerce-main\ecomerce\EcommereceWeb.Application\obj\Debug\net6.0\refint\EcommereceWeb.Application.dll
+D:\wejo\verison\v10\Ecommerce-main\ecomerce\EcommereceWeb.Application\obj\Debug\net6.0\EcommereceWeb.Application.pdb
+D:\wejo\verison\v10\Ecommerce-main\ecomerce\EcommereceWeb.Application\obj\Debug\net6.0\ref\EcommereceWeb.Application.dll

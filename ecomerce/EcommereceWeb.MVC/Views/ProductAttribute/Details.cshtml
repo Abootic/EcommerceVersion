@@ -1,0 +1,612 @@
+﻿@model ProductDto
+<style>
+    #Image_Image {
+        border-radius: 10% !important;
+        height: 12rem;
+        width: 15rem;
+        background-repeat: no-repeat;
+        background-size: cover;
+        object-position: 50% 50%;
+    }
+
+    #img-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+</style>
+          <!-- / Navbar -->
+
+          <!-- Content wrapper -->
+          <div class="content-wrapper">
+            <!-- Content -->
+            <div class="container-xxl flex-grow-1 container-p-y">
+              <h4 class="breadcrumb-wrapper py-3 mb-4"><span class="text-muted fw-light">أنشاء منتج جديد /</span> إنشاء منتج</h4>
+             
+            <div class="content-body ">
+
+              <!-- Form wizard with step validation section start -->
+              <section id="validation">
+                <div class="card m-0">
+                  <div class="row m-2">
+                      <div class="col-12">
+                                  <form action="#" class="wizard-validation ">
+                                      <!-- Step 1 -->
+                                      <h6>
+                                          <i class="step-icon"></i>
+                                          <span class="">المنتج</span>
+                                      </h6>
+                                      <!-- Step 1 -->
+                                      <!-- body content of step 1 -->
+                                      <fieldset>
+                                     
+                                        <div class="tab-content mt-4">
+                                         <div class="tab-pane fade show active" id="navs-tabs-line-justified-home" role="tabpanel">                   
+                                          <div  class="repeater-default">                                         
+                                              <div data-repeater-list="group-a" >
+                                                <div data-repeater-item >                                                                                                   
+                                                  <div class="card mb-4  ms-0 me-0 border " style="border-radius: 5px;"> 
+                                                    <div class="row  bg-label-secondary border-bottom  m-0 " style="border-top-left-radius: 5px; border-top-right-radius: 5px; ">
+                                                      <div class="col"> 
+                                                       <h4 class="p-1 m-2 text-primary"> المنتج</h4>
+                                                      </div>
+                                                         <button type="button" class="btn-close p-2 mt-2 me-3 " data-repeater-delete  ></button>
+                                                      </div>       
+                                                     <div class="card-body mb-3">
+                                                          <!--toggle start-->
+                                                            <div class="m-0 ">
+                                                               
+
+                                                              <div class="row justify-content-between ">
+                                                             
+                                                                  
+                                                                @*  <div class="col-md-4 ">
+                                                                      <div class=" mb-3">
+                                                                          <label for="" class="form-label">الجهة</label>
+                                                                          <select class="form-select " id="a" name="الجهة" required>
+                                                                          <option value="">الجهة</option>
+                                                                          <option>فرد</option>
+                                                                          <option>شخصية إعتبارية</option> 
+                                                                          <option>حكومي</option>                                                              
+                                                                      </select>
+                                                                  </div>
+                                                                  </div>*@
+                                                                  
+                                                                  <div class="col-md-4">
+                                                                      <div class="mb-3">
+                                                                          <label for="Name3" asp-for="ArName" class="form-label"> </label>
+                                                                          <input type="text" asp-for="ArName" class="form-control required " id="Name3" name="Name" placeholder="ادخل الاسم بالعربي">
+                                                                      </div>
+                                                                  </div> 
+                                                                  <div class="col-md-4">
+                                                                      <div class="mb-3">
+                                                                          <label for="Name3" asp-for="EnName" class="form-label"> </label>
+                                                                          <input type="text" asp-for="EnName" class="form-control required " id="Name3" name="Name" placeholder="   ادخل الاسم بالانجليزي ">
+                                                                      </div>
+                                                                  </div> 
+                                                                  <div class="col-md-4">
+                                                                      <div class="mb-3">
+                                                                          <label for="Name3" asp-for="BrandId" class="form-label"> الماركة</label>
+                                                                           <select class="form-select required" id="class4" name="class4" >
+                                                                          <option value="" >   اختار الماركة</option>
+                                                                          <option>الماركة 1</option>
+                                                                          <option> الماركة 2</option>                                                  
+                                                                         </select>                                                                       </div>
+                                                                  </div>
+                                                                 
+
+                                                                 
+                                                              </div>
+                                                                  
+                                                              <div class="row justify-content-between ">
+
+                                                                  <div class="col-sm-4">
+                                                                      <div class="mb-3 ">
+                                                                          <label class="form-label" asp-for="MinOrderQuantity" for="phone"> </label>
+                                                                          <input type="number" asp-for="MinOrderQuantity" class="form-control  required" id="phone" name="phone" placeholder="اقل كمية يمكن يطلبها ">
+                                                                      </div>
+                                                                  </div>
+                                                                  
+                                                                 <div class="col-sm-4">
+                                                                      <div class="mb-3 ">
+                                                                          <label class="form-label" asp-for="MaxOrderQuantity" for="phone1"> </label>
+                                                                          <input type="number" asp-for="MaxOrderQuantity" class="form-control  required" id="phone1" name="phone1" placeholder="اكثر كمية يمكن يطلبها ">
+                                                                      </div>
+                                                                  </div>
+                                                                  
+                                                               <div class="col-md-4">
+                                                                      <div class="mb-3">
+                                                                          <label class="form-label" asp-for="Discount" for="b"></label>
+                                                                        <input type="number" asp-for="Discount" class="form-control  required" id="dis" name="dis" placeholder=" نسبة الخصم للمنتج   ">
+ 
+                                                                  </div>
+
+                                                              </div>
+
+                                                              <div class="row justify-content-between ">
+                                                                   <div class="col-md-4">
+                      
+                                                                  
+                                                                                                                                 
+                                                                      <label class="form-label" for="">   نصنيفات المنتج </label>
+                                                                  <div class="container border p-3 "style="border-radius:7px">
+                                                                      <div class="mb-3">
+                                                                          <label class="form-label" for="city"> التصنيف الرئيسي </label>
+                                                                        <select class="form-select required" id="class1" name="class1" >
+                                                                          <option value="" >اختار التصنيف الرئيسي</option>
+                                                                          <option>التصتيف 1</option>
+                                                                          <option> التصنيف 2</option>                                                  
+                                                                         </select>
+                                                                      </div>
+                                                                      <div class="mb-3">
+                                                                          <label class="form-label" for="mod"> التصنيف الاساسي </label>
+                                                                           <select class="form-select required" id="class2" name="class2" >
+                                                                          <option value="" >اختار التصنيف الاساسي</option>
+                                                                          <option>التصتيف 1</option>
+                                                                          <option> التصنيف 2</option>                                                  
+                                                                         </select>  
+                                                                         </div>
+                                                                      <div class="mb-3">
+                                                                          <label class="form-label" for="date"> التصنيف الفرعي  </label>
+                                                                        <select class="form-select required" id="class3" name="class3" >
+                                                                          <option value="" >اختار التصنيف الفرعي</option>
+                                                                          <option>التصتيف 1</option>
+                                                                          <option> التصنيف 2</option>                                                  
+                                                                         </select>                                                                   
+                                                                         </div>
+                                                                
+                                                                      <div class="mb-3">
+                                                                          <label class="form-label" for="date"> التصنيف فرعي الفرعي  </label>
+                                                                        <select class="form-select required" id="class4" name="class4" >
+                                                                          <option value="" > التصنيف فرعي الفرعي</option>
+                                                                          <option>التصتيف 1</option>
+                                                                          <option> التصنيف 2</option>                                                  
+                                                                         </select>                                                                      
+                                                                         </div>
+
+                                                                  </div>
+                                                                  </div>
+                                                                  <div class="col-md-4">
+                                                                    
+                                                                  
+                                                                  <label class="form-label" for=""> وصف المنتج </label>
+                                                                  <div class="container border  p-3 "style="border-radius:7px">
+                                                                   
+                                                                      <div class="mb-3">
+                                                                          <label class="form-label" asp-for="ArDetails" for="mod2"> </label>
+                                                                          <textarea rows="2"  asp-for="ArDetails" class="form-control required" id="mod2" name="mod21" placeholder="ادخل الوصف بالعربي "></textarea>
+                                                                      </div>
+                                                                      <div class="mb-3">
+                                                                          <label class="form-label" asp-for="EnDetails" for="ozla">  </label>
+                                                                          <textarea rows="2" asp-for="EnDetails" class="form-control required" id="ozla" name="ozla1" placeholder="  ادخل الوصف بالانجليزي"></textarea>
+                                                                      </div>
+                                                                   <div class="mb-3">
+                                                                          <label class="form-label" asp-for="ArKeyWords" for="ozla">  </label>
+                                                                          <textarea rows="3" asp-for="ArKeyWords" class="form-control required" id="ozla" name="keywords" placeholder="  ادخل الكلمات المفتاحية  "></textarea>
+                                                                      </div>
+                                                                  
+                                                                  </div>
+
+
+                                                                  </div>
+                                                                  
+                                                                  <div class="col-md-4">
+                                                                      <label class="form-label" for="">   الصورة الرئسية للمنتج</label>
+                                                                  <div class="container border  p-3 "style="border-radius:7px">
+                                                                     
+                                                                      <div class="mb-11">
+                                            <a class="mr-2" href="javascript:void(0);">
+                                                <img src="../../../app-assets/images/portrait/small/avatar-s-26.jpg" id="Image_Image" class="users-avatar-shadow rounded-circle" height="70" width="70">
+                                            </a>
+                                            <span id="errorUplod1" class="badge badge-light-danger"> </span>
+                                        </div>
+                                        <br />
+                                          <div class="media-body">
+                                                @* <h4 class="media-heading">Avatar</h4>*@
+                                                <div class="col-12 px-0 d-flex">
+                                                    <a id="fileBtn" class="btn  btn-primary " style="color:white;">اختار صورة المنتج الرئسية</a>
+
+                                                </div>
+                                            </div>
+                                                                     
+                                                                  </div>
+                                                                  <br />
+                                    <div class="modal-footer d-inline-flex">
+
+                                                       <input type="submit" class="btn btn-secondary"  value=" التالي ">
+
+                                                                  </div> 
+                                                                  </div> 
+
+                                                              </div>                                                                                                
+                                                          </div>
+                                                          </div>
+                                                       </div>
+                                                      </div>
+                                              
+                                              
+                                            <!--  <div class="mb-3">
+                                                <div class="col p-0 ">
+                                                  <button class="btn btn-primary" data-repeater-create type="button"><i class="bx bx-plus"></i>
+                                                    إضافة طرف آخر
+                                                  </button>
+                                                </div>
+                                              </div>-->
+                                              
+                                          </div>
+                                         </div>
+                                         <!--here delete-->
+                                        </div>
+                                        </div>
+                                        </div>
+                                      </fieldset> 
+                                                                        
+                                      <!-- body content of step 1 end -->
+
+                                      <!-- Step 2-->
+                                      <h6>
+                                          <i class="step-icon"></i>
+                                          <span class="">الغارفشن</span>
+                                      </h6>
+                                      <!-- Step 2 -->
+                                      <!-- body content of step 2 -->
+                                      <fieldset>
+                                          <div  class="repeater-default">                                         
+                                              <div data-repeater-list="group-a" >
+                                                <div data-repeater-item >                                                                                                  
+                                                  <div class="card mb-4 mt-4 border " style="border-radius: 5px;"> 
+                                                    <div class="row  bg-label-secondary border-bottom  m-0 " style="border-top-left-radius: 5px; border-top-right-radius: 5px; ">
+                                                      <div class="col"> 
+                                                       <h4 class="p-1 m-2 text-primary"> الغارفشن</h4>
+                                                      </div>
+                                                         <button type="button" class="btn-close p-2 mt-2 me-3 " data-repeater-delete  ></button>
+                                                      </div>      
+                                                    <div class="card-body mb-3">
+                                                        <!--toggle start-->
+                                                        <div class="row justify-content-between">
+                                                          <div class="m-0 ">
+                                                            
+                                                                <div
+                                                                class="offcanvas offcanvas-end"
+                                                                tabindex="-1"
+                                                                id="المخولين"
+                                                                aria-labelledby="offcanvasStartLabel"
+                                                                >
+                                                                <div class="offcanvas-header border-bottom">
+                                                                    <h5 id="offcanvasStartLabel" class="offcanvas-title">إستيراد البيانات</h5>
+                                                                    <button
+                                                                    type="button"
+                                                                    class="btn-close text-reset"
+                                                                    data-bs-dismiss="offcanvas"
+                                                                    aria-label="Close"
+                                                                    ></button>
+                                                                </div>
+                                                                <div class="offcanvas-body flex-grow-0 ">
+                                                                  
+                                                                    <div class="mb-3 ">
+                                                                        <label class="form-label" for="identityNumber">رقم الهوية الشخصية </label>
+                                                                        <input type="number" class="form-control " id="identityNumber" name="identityNumber1" placeholder="  أدخل رقم الهوية الشخصية ">
+                                                                        
+                                                                    </div>
+                                                                    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                                                                    <button type="button" class="btn btn-primary d-grid w-100 mb-2">إستيراد</button>
+                                                                    <button
+                                                                    type="button"
+                                                                    class="btn btn-label-secondary d-grid w-100"
+                                                                    data-bs-dismiss="offcanvas"
+                                                                    >
+                                                                    إلغاء
+                                                                    </button>
+                                                                </div>                                               
+                                                             </div>
+                                                          </div>
+                                                        </div>
+                                                          <!--toggle end-->         
+
+                                                              <div class="row justify-content-between ">
+                                                                  
+                                                                  <div class="col-md-4">
+                                                                    <div class="">
+                                                                      <label for="selectpickerMultiple" class="form-label">الطرف</label>
+                                                                      <select
+                                                                        id="selectpickerMultiple"
+                                                                        class="selectpicker w-100"
+                                                                        data-style="btn-default"
+                                                                        multiple
+                                                                        data-icon-base="bx"
+                                                                        data-tick-icon="bx-check text-primary "
+                                                                        
+                                                                      >
+                                                                        <option>...</option>
+                                                                        <option>....</option>
+                                                                        <option>...</option>
+                                                                      </select >
+                                                                    </div>
+                                                                  </div>
+                                                                  
+                                                                  <div class="col-md-4">
+                                                                      <div class="mb-3">
+                                                                          <label  class="form-label"for="Name3">الاسم الثلاثي</label>
+                                                                          <input type="text" class="form-control required " id="Name3" name="Name" placeholder="  ادخل الاسم الثلاثي">
+                                                                      </div>
+                                                                  </div>
+                                                                  
+                                                                  <div class="col-md-2">
+                                                                      <div class="mb-3">
+                                                                          <label class="form-label" for="lastName">اللقب</label>
+                                                                          <input type="text" class="form-control required " id="lastName" name="lastName" placeholder="ادخل اللقب">
+                                                                      </div>
+                                                                  </div>
+
+                                                                  
+                                                                  <div class="col-md-2">
+                                                                      <div class="mb-3 ">
+                                                                          <label class="form-label" for="age">العمر </label>
+                                                                          <input type="number" class="form-control required" id="age" name="age1" placeholder="ادخل العمر ">
+                                                                      </div>
+                                                                  </div>
+                                                              </div>
+                                                                  
+                                                              <div class="row justify-content-between ">
+
+                                                                  <div class="col-sm-4">
+                                                                      <div class="mb-3 ">
+                                                                          <label class="form-label" for="phone">رقم الهاتف</label>
+                                                                          <input type="number" class="form-control  required" id="phone" name="phone" placeholder=" ادخل رقم الهاتف">
+                                                                      </div>
+                                                                  </div>
+                                                                  
+                                                                  <div class="col-md-2">
+                                                                      <div class="mb-3">
+                                                                          <label class="form-label" for="mf">الجنس</label>
+                                                                          <select  class="form-select  required" id="mf" name="mf1" >
+                                                                          <option value="" >الجنس</option>
+                                                                          <option>ذكر</option>
+                                                                          <option>انثى</option>                                                  
+                                                                      </select>
+                                                                  </div>
+                                                                  </div>
+                                                                  <div class="col-md-2">
+                                                                      <div class="mb-3">
+                                                                          <label class="form-label" for="nationalty">الجنسية</label>
+                                                                          <select class="form-select " id="nationalty" name="nationalty1" required>
+                                                                          <option value="">الجنسية</option>
+                                                                          <option>يمني</option>
+                                                                          <option>يمني</option>                                                               
+                                                                      </select>
+                                                                  </div>
+                                                                  </div>
+                                                                  
+                                                                  <div class="col-md-4">                                                           
+                                                                  <div class="mb-3 ">
+                                                                          <label class="form-label" for="mother">اسم الأم </label>
+                                                                          <input type="text" class="form-control required" id="mother" name=" mother1" placeholder=" ادخل اسم الأم ">
+                                                                      </div>
+                                                                  </div>
+
+                                                              </div>
+
+                                                              <div class="row justify-content-between ">
+                                                                  
+                                                                  <div class="col-md-4">
+                                                                      <div class="mb-3">
+                                                                          <label class="form-label" for="description">الصفة الشخصية</label>
+                                                                          <select class="form-select  required" id="description" name="description1"  >
+                                                                          <option value="">الصفة الشخصية</option>
+                                                                          <option>أصيل </option>
+                                                                          <option>وكيل</option>
+                                                                          <option>ولي</option>
+                                                                          <option>منصوب</option>
+                                                                          <option>وصي</option>                                                                
+                                                                      </select>
+                                                                     </div>
+
+                                                                      <label class="form-label" for=""> محل وتاريخ الميلاد </label>
+                                                                  <div class="container border  p-3 "style="border-radius:7px">
+                                                                        <div class="mb-3">
+                                                                          <label class="form-label" for="city5"> المحافظة </label>
+                                                                        <select class="form-select required" id="city5" name="city15" >
+                                                                          <option value="" >المحافظة</option>
+                                                                          <option>صنعاء</option>
+                                                                          <option>تعز</option>                                                  
+                                                                        </select>
+                                                                      </div>
+                                                                      <div class="mb-3">
+                                                                          <label class="form-label" for="mod"> المديرية </label>
+                                                                          <input type="text" class="form-control required" id="mod" name=" mod1" placeholder="ادخل اسم المديرية">
+                                                                      </div>
+                                                                      <div class="mb-3">
+                                                                          <label class="form-label" for="date"> تاريخ الميلاد </label>
+                                                                          <input type="date" class="form-control required" id="date" name="date1">
+                                                                      </div>
+                                                                  </div>
+
+                                                                  </div>
+                                                                  <div class="col-md-4">
+                                                                      <div class="mb-3">
+                                                                          <label class="form-label" for="etbarya">الصفة الاعتبارية</label>
+                                                                          <select class="form-select  required" id="etbarya" name="etbarya1"  >
+                                                                          <option value="">الصفةالاعتبارية</option>
+                                                                          <option>رئيس مجلس ادارة </option>
+                                                                          <option>مدير عام الشركة</option>
+                                                                          <option>مالك المؤسسة</option>
+                                                                          <option>المدير المسؤول</option>
+                                                                          <option>رئيس مجلس الامناء</option>                                            
+                                                                         <option>المدير التنفيذي</option>
+                                                                          <option>شريك</option>
+                                                                          <option>رئيس الاتحاد</option>
+                                                                          <option>رئيس النقابة</option>                                                               
+                                                                      </select>
+                                                                     </div>
+                                                                  
+                                                                  <label class="form-label" for=""> العنوان </label>
+                                                                  <div class="container border p-3 "style="border-radius:7px">
+                                                                        <div class="mb-3">
+                                                                          <label class="form-label" for="city6"> المحافظة </label>
+                                                                        <select class="form-select required" id="city6" name="city16" >
+                                                                          <option value="" >المحافظة</option>
+                                                                          <option>صنعاء</option>
+                                                                          <option>تعز</option>                                                  
+                                                                        </select>
+                                                                      </div>
+                                                                      <div class="mb-3">
+                                                                          <label class="form-label" for="mod2"> المديرية</label>
+                                                                          <input type="text" class="form-control required" id="mod2" name="mod21" placeholder="ادخل اسم المديرية">
+                                                                      </div>
+                                                                      <div class="mb-3">
+                                                                          <label class="form-label" for="ozla"> العزلة </label>
+                                                                          <input type="text" class="form-control required" id="ozla" name="ozla1" placeholder="ادخل اسم العزلة">
+                                                                      </div>
+                                                                  </div>
+
+
+                                                                  </div>
+                                                                  
+                                                                  <div class="col-md-4">
+                                                                      <label class="form-label" for=""> وثائق إثبات الشخصية </label>
+                                                                  <div class="container border   p-3 "style="border-radius:7px">
+                                                                      <div class="mb-3">
+                                                                          <label class="form-label" for="type1">نوعها</label>
+                                                                          <select class="form-select " id="type1" name="type11 " required>
+                                                                          <option value="">نوعها</option>
+                                                                          <option>بطاقة شخصية </option>
+                                                                          <option>بطاقة عائلية</option>
+                                                                          <option>جواز سفر</option>
+                                                                          <option>معرفين</option>                                                                                                                              
+                                                                      </select>
+                                                                  </div>
+                                                                      <div class="mb-3">
+                                                                          <label class="form-label" for="num"> رقمها </label>
+                                                                          <input type="number" class="form-control required" id="num" name="num1" placeholder="ادخل رقمها">
+                                                                      </div>
+                                                                      <div class="mb-3">
+                                                                          <label class="form-label" for="date2"> تاريخها </label>
+                                                                          <input type="date" class="form-control required" id="date2" name="date21" placeholder="">
+                                                                      </div>
+                                                                      
+                                                                      <div class="mb-3">
+                                                                          <label class="form-label" for="Esdar"> جهة الإصدار </label>
+                                                                          <input type="text" class="form-control required" id="Esdar" name="Esdar1" placeholder="ادخل جهة الإصدار">
+                                                                      </div>
+                                                                  </div>
+                                                                  </div>                                                       
+                                                              </div>                                                                                                
+                                                          </div>
+                                                        </div>                                           
+                                                       </div>
+                                                      </div>
+                                              
+                                              
+                                            
+                                              
+                                          </div>
+                                      </fieldset>
+                                      <!-- body content of step 2 end -->
+
+
+
+                                      
+                                      <!-- Step 5 -->
+                                      <h6>
+                                          <i class="step-icon"></i>
+                                          <span class="">المرفقات</span>
+                                      </h6>
+                                      <!-- Step 5 -->
+                                      <!-- body content of step 5-->
+                                      <fieldset>
+                                          <div  class="repeater-default">                                         
+                                              <div data-repeater-list="group-a" >
+                                                <div data-repeater-item >                                                                                                  
+                                                  <div class="card mb-4 mt-4 border " style="border-radius: 5px;"> 
+                                                    <div class="row  bg-label-secondary border-bottom  m-0 " style="border-top-left-radius: 5px; border-top-right-radius: 5px; ">
+                                                    <div class="col"> 
+                                                     <h4 class="p-1 m-2 text-primary"> المرفقات</h4>
+                                                    </div>
+                                                       <button type="button" class="btn-close p-2 mt-2 me-3 " data-repeater-delete ></button>
+                                                    </div> 
+                                                    <div class="card-body mb-2 mt-2">
+                                                                                                       
+                                                              <div class="row justify-content-between ">
+                                                                  
+                                                                  <div class="col-md-6">
+                                                                      <div class="mb-3">
+                                                                          <label class="form-label" for="typedoc">نوع الوثيقة المرفقة</label>
+                                                                       <select class="form-select  required" id="typedoc" name="typedoc1" >
+                                                                          <option value="" >نوع الوثيقة المرفقة</option>
+                                                                          <option>..</option>
+                                                                          <option>..</option>                                                  
+                                                                       </select>
+                                                                      </div>
+                                                                          
+                                                                      <div class="mb-3 ">
+                                                                          <label class="form-label" for="paper"> عدد الصفحات</label>
+                                                                          <input type="number" class="form-control  required" id="paper" name="paper1" placeholder=" ادخل رقم الهاتف">
+                                                                       </div>
+                                                                          
+                                                                      <div class="mb-3">
+                                                                          <label class="form-label" for="datemo">تاريخها</label>
+                                                                          <input type="date" class="form-control required" id="datemo" name="datemo1">
+                                                                      </div>
+
+                                                                      <div class="mb-3">
+                                                                          <label class="form-label"  for="Ntraf"> اسم الطرف</label>
+                                                                       <select class="form-select  required" id="Ntraf" name="Ntraf1" >
+                                                                          <option value="" >اسم الطرف</option>
+                                                                          <option>..</option>
+                                                                          <option>..</option>                                                  
+                                                                       </select>
+                                                                      </div>
+                                                                  </div>
+                                                                  <div class="col-md-6">
+                                                                      
+                                                                      <div class="mb-3 ">
+                                                                          <label class="form-label" for="nomo">رقمها</label>
+                                                                          <input type="number" class="form-control  required" id="nomo" name="nomo1" placeholder=" ادخل رقم الهاتف">
+                                                                       </div>
+
+                                                                      <label class="form-label " for="">جهة الإصدار</label>
+                                                                  <div class="container border  pb-4 p-3 "style="border-radius:7px">
+                                                                      <div class="mb-3">
+                                                                          <label class="form-label" for="nationalty">محكمة/ قلم توثيق</label>
+                                                                       <select class="form-select " id="nationalty" name="nationalty1" required>
+                                                                          <option value="">محكمة / قلم توثيق</option>
+                                                                          <option>..</option>
+                                                                          <option>..</option>                                                               
+                                                                       </select>
+                                                                      </div>
+
+                                                                      <div class="mb-3 ">
+                                                                          <label class="form-label" for="nother"> اخرى </label>
+                                                                          <input type="text" class="form-control" id="nother" name=" nother1" placeholder=" جهة إصدار آخرى">
+                                                                      </div>
+                                                                  </div>
+                                                                </div>
+                                                              </div>                         
+                                                          </div>
+                                                        </div>                                           
+                                                       </div>
+                                                      </div>
+                                            
+                                             </div>
+                                      </fieldset>                                   
+                                      <!-- body content of step 5 end -->   
+
+                                       
+                                   
+                                    
+                                  </form>
+                                <br>
+                              </div>
+                         </div>
+                   </div>
+              </section>
+              <!-- Form wizard with step validation section end -->
+          </div>
+            </div>
+            <!-- / Content -->
+
+
+            <div class="content-backdrop fade"></div>
+          </div>
+        

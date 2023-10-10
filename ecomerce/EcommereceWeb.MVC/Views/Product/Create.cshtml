@@ -1,0 +1,122 @@
+﻿
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    form {
+        width: 300px;
+        margin: 0 auto;
+    }
+
+    .step {
+        display: none;
+    }
+
+    h2 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    input,
+    textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    button {
+        padding: 10px 20px;
+        background-color: #007BFF;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+    }
+
+        button.prev-step {
+            background-color: #ccc;
+        }
+
+        button[type="submit"] {
+            background-color: #28A745;
+        }
+
+</style>
+    <form id="myForm">
+        <div class="step" data-step="1">
+            <h2>Step 1</h2>
+            <input type="text" name="name" placeholder="Name">
+            <button class="next-step">Next</button>
+        </div>
+        <div class="step" data-step="2">
+            <h2>Step 2</h2>
+            <input type="email" name="email" placeholder="Email">
+            <button class="prev-step">Previous</button>
+            <button class="next-step">Next</button>
+        </div>
+        <div class="step" data-step="3">
+            <h2>Step 3</h2>
+            <textarea name="message" placeholder="Message"></textarea>
+            <button class="prev-step">Previous</button>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+
+    <script src="script.js"></script>
+
+            @section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.getElementById("myForm");
+            const steps = form.querySelectorAll(".step");
+            let currentStep = 1;
+
+            function showStep(stepIndex) {
+                steps.forEach((step, index) => {
+                    if (index === stepIndex) {
+                        step.style.display = "block";
+                    } else {
+                        step.style.display = "none";
+                    }
+                });
+            }
+
+            function goToStep(stepIndex) {
+                alert("jjjjjjjjjjjjjj");
+                showStep(stepIndex);
+                currentStep = stepIndex;
+            }
+
+            document.querySelectorAll(".next-step").forEach((nextButton, index) => {
+                nextButton.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    if (currentStep < steps.length - 1) {
+                        goToStep(currentStep + 1);
+                    }else{
+                        alert("ffffffffff");
+                    }
+                });
+            });
+
+            document.querySelectorAll(".prev-step").forEach((prevButton, index) => {
+                prevButton.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    if (currentStep > 0) {
+                        goToStep(currentStep - 1);
+                    }
+                });
+            });
+
+            form.addEventListener("submit", function (e) {
+                e.preventDefault();
+                // Handle form submission here
+            });
+
+            showStep(currentStep);
+        });
+
+</script>
+            }

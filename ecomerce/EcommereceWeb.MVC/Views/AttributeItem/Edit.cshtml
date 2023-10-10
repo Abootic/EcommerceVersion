@@ -1,0 +1,99 @@
+﻿@model AttributeItemDto
+<div class="content-body">
+    <!-- login page start -->
+   @*  @if (TempData["err"] != null)
+    {
+        <span class="alert alert-danger">@TempData["err"]</span>
+    }
+    @if (TempData["suc"] != null)
+    {
+        <span class="alert alert-success">@TempData["suc"]</span>
+    } *@
+    <section id="auth-login" class="row flexbox-container">
+        <div class="col-xl-10 col-11">
+            <div class="card bg-authentication mb-0">
+                <div class="row m-0">
+                    <!-- left section-login -->
+                    <div class="col-md-8 col-12 px-0">
+                        <div class="card disable-rounded-right mb-0 p-2 h-100 d-flex justify-content-center">
+                            <div class="card-header pb-1">
+                                <div class="card-title">
+@{
+                                        if (TempData.GetTemp<string>("name") != null)
+                                        {
+                                            var name = TempData.GetTemp<string>("name");
+
+                                            <h4 class="text-center mb-2">   تعديل  @name  </h4>
+                                        }
+
+                                    } 
+                                    </div>
+                            </div>
+                            <div class="card-body">
+                                @if (TempData.ContainsKey("msg"))
+                                {
+                                    <div class="alert alert-warning">@TempData["msg"]</div>
+                                }
+                                <form asp-controller="AttributeItem" asp-action="Edit" method="post">
+
+                                   
+                                        <input type="hidden" asp-for="AttributeId"  />
+                                    
+                                    <div class="form-group mb-50">
+                                        <label class="text-bold-600" asp-for="ArName" for="exampleInputEmail1"> </label>
+                                        <input type="text" class="form-control" asp-for="ArName" placeholder="ادخل الاسم العربي">
+                                        <span asp-validation-for="ArName"></span>
+                                    </div>
+                                    <div class="form-group mb-50">
+                                        <label class="text-bold-600" asp-for="EnName" for="exampleInputEmail1"></label>
+                                        <input type="text" class="form-control" asp-for="EnName" placeholder="ادخل الاسم بالانجليزي ">
+                                    </div>
+                                    <div class="form-group mb-50">
+                                        <label class="text-bold-600" asp-for="Code" for="exampleInputEmail1"> الرمز</label>
+                                        <input type="text" class="form-control" asp-for="Code" placeholder=" ادخل الرمز الدال على الصفة">
+                                    </div>
+                                    <div class="form-group mb-50">
+                                        <label class="text-bold-600" asp-for="Details" for="exampleInputEmail1"> </label>
+                                      <textarea class="form-control form-control-lg" asp-for="Details" rows="3" placeholder="ادحل النفاصيل"></textarea>
+                                    </div>
+                                    @{
+                                        if (TempData.GetTemp<int>("AttType") != null)
+                                        {
+                                            var type = TempData.GetTemp<int>("AttType");
+                                            if (type == 3)
+                                            {
+                                                  <div class="form-group mb-50">
+                                        <label class="text-bold-600" asp-for="ColorCode" for="exampleInputEmail1"> </label>
+                                        <input type="color" class="form-control" asp-for="ColorCode" >
+                                    </div>  
+                                            }
+                                                                                }
+
+                                    }
+
+                                   <div class="modal-footer d-inline-flex">
+                            @{
+                               @if (TempData.GetTemp<int>("AttId") != 0)
+                                 {
+                                  int mainId = TempData.GetTemp<int>("AttId");
+                                        <a class="btn btn-secondary" asp-action="Index" asp-route-id="@mainId">الغاء</a>
+                                  }
+                              }
+                                        <input type="submit" class="btn alert-info" value=" تعديل ">
+                                    </div>
+                                </form>
+                                <hr>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- right section image -->
+                    <div class="col-md-4 d-md-block d-none text-center align-self-center p-3">
+                        <img class="img-fluid" src="~/app-assets/images/pages/login.png" alt="branding logo">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- login page ends -->
+
+</div>

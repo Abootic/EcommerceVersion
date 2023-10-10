@@ -1,0 +1,133 @@
+﻿
+@model ProductAdditionalDetailsDto
+
+
+
+
+<!-- / Navbar -->
+<!-- Content wrapper -->
+<div class="content-wrapper">
+    
+    <!-- Content -->
+    <div class="container-xxl flex-grow-1 container-p-y">
+        <h4 class="breadcrumb-wrapper py-3 mb-4"><span class="text-muted fw-light">تعديل بيانات المنتج الاضافية /</span>  البيانات الاضافية</h4>
+
+        <div class="content-body ">
+
+            <!-- Form wizard with step validation section start -->
+            <section id="validation">
+                <div class="card m-0">
+                    <div class="row m-2">
+                        <div class="col-12">
+                          
+                                    <form asp-controller="ProductAdditionalDetails" asp-action="Edit" method="post">
+                                        <!-- Step 1 -->
+                                        <h6>
+                                            <i class="step-icon"></i>
+                                            <span class="">  تعديل بيانات المنتج الاضافية</span>
+                                        </h6>
+                                          @if (TempData.ContainsKey("msg"))
+                                {
+                                    <div class="alert alert-warning">@TempData["msg"]</div>
+                                }
+   
+                                        <div class="tab-content mt-4">
+                                            <div class="tab-pane fade show active" id="navs-tabs-line-justified-home" role="tabpanel">
+
+                                                <div class=" mb-4  ms-0 me-0 border " style="border-radius: 5px;">
+                                                    <div class="row  bg-label-secondary border-bottom  m-0 " style="border-top-left-radius: 5px; border-top-right-radius: 5px; ">
+                                                        <div class="col">
+                                                            <h4 class="p-1 m-2 text-primary"> تعديل بيانات المنتج الاضافية</h4>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="card-body mb-3">
+
+                                                        <!--toggle start-->
+                                                        <div class="m-0 ">
+                                      <label class="text-bold-600" asp-for="ProductId"> </label>
+
+                                     <input type="text" class="form-control" style="color:#aa74fb" asp-for="ProductId" readOnly >
+
+                                    <div class="form-group mb-50">
+                                        <label class="text-bold-600" asp-for="ArTitle"> </label>
+                                        <input type="text" class="form-control" asp-for="ArTitle" placeholder="ادخل الاسم العربي">
+                                        <span asp-validation-for="ArTitle"></span>
+
+                                    </div> 
+                                    <div class="form-group mb-50">
+                                        <label class="text-bold-600" asp-for="EnTitle"> </label>
+                                        <input type="text" class="form-control" asp-for="EnTitle" placeholder="ادخل الاسم بالانجليزي ">
+                                    </div>  <div class="form-group mb-50">
+                                        <label class="text-bold-600" asp-for="ArValue"> </label>
+                                        <input type="text" class="form-control" asp-for="ArValue" placeholder="ادخل القيمة العربي">
+                                             <span asp-validation-for="ArValue"></span>
+
+                                    </div> 
+                                    <div class="form-group mb-50">
+                                        <label class="text-bold-600" asp-for="EnValue"> </label>
+                                        <input type="text" class="form-control" asp-for="EnValue" placeholder="ادخل القيمة بالانجليزي ">
+                                    </div>
+                                   <br />
+                                    <div class="row">
+                                       <div class="col-4 ">    
+                                               <div class="demo-inline-spacing">
+@{
+                               @if (TempData.GetTemp<int>("ProductId") != 0)
+                                 {
+                                  int mainId = TempData.GetTemp<int>("ProductId");
+                                        <a class="btn btn-secondary" asp-action="Index" asp-route-id="@mainId">الغاء</a>
+                                  }
+                              }                                            </div>
+                                            </div>
+                                        <div class="col-8 text-end">
+                                            <input type="submit" class="btn alert-info m-1  mb-3" value="تعديل ">
+                                            </div>
+                                    </div>
+
+                                
+                                                </div>
+
+
+                                       
+                                               
+                                          <br />
+                                   
+                                        
+                                            
+                                           </div>
+
+
+
+
+
+
+                                            </div>
+                                        </div>
+                                        </div>
+
+                                      
+
+
+                                    </form>
+                               
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Form wizard with step validation section end -->
+        </div>
+    </div>
+    <!-- / Content -->
+   
+
+    <div class="content-backdrop fade"></div>
+</div>
+
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

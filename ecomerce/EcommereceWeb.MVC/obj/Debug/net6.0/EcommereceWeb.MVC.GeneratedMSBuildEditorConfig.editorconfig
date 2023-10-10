@@ -1,0 +1,329 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = EcommereceWeb.MVC
+build_property.RootNamespace = EcommereceWeb.MVC
+build_property.ProjectDir = D:\wejo\verison\v10\Ecommerce-main\ecomerce\EcommereceWeb.MVC\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\wejo\verison\v10\Ecommerce-main\ecomerce\EcommereceWeb.MVC
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/Account/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/Account/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/Account/_AddUserToRole.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxfQWRkVXNlclRvUm9sZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/AttributeItem/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXR0cmlidXRlSXRlbVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/AttributeItem/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXR0cmlidXRlSXRlbVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/AttributeItem/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXR0cmlidXRlSXRlbVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/AttributeItem/IndexAll.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXR0cmlidXRlSXRlbVxJbmRleEFsbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/Attribute/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXR0cmlidXRlXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/Attribute/Detaijls.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXR0cmlidXRlXERldGFpamxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/Attribute/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXR0cmlidXRlXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/Attribute/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXR0cmlidXRlXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/Attribute/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXR0cmlidXRlXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/Attribute/_checkBoxList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXR0cmlidXRlXF9jaGVja0JveExpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/BasicClassification/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFzaWNDbGFzc2lmaWNhdGlvblxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/BasicClassification/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFzaWNDbGFzc2lmaWNhdGlvblxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/BasicClassification/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFzaWNDbGFzc2lmaWNhdGlvblxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/BasicClassification/Index1.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFzaWNDbGFzc2lmaWNhdGlvblxJbmRleDEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/Brand/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJhbmRcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/Brand/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJhbmRcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/Brand/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJhbmRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/Configuration/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uZmlndXJhdGlvblxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/Configuration/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uZmlndXJhdGlvblxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/Configuration/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uZmlndXJhdGlvblxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/Currency/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VycmVuY3lcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/Currency/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VycmVuY3lcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/Currency/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VycmVuY3lcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/DetailsData/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV0YWlsc0RhdGFcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/DetailsData/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV0YWlsc0RhdGFcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/DetailsData/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV0YWlsc0RhdGFcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/MainClassification/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpbkNsYXNzaWZpY2F0aW9uXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/MainClassification/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpbkNsYXNzaWZpY2F0aW9uXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/MainClassification/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpbkNsYXNzaWZpY2F0aW9uXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/MasterData/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFzdGVyRGF0YVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/MasterData/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFzdGVyRGF0YVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/MasterData/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFzdGVyRGF0YVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/ProductAdditionalDetails/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdEFkZGl0aW9uYWxEZXRhaWxzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/ProductAdditionalDetails/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdEFkZGl0aW9uYWxEZXRhaWxzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/ProductAdditionalDetails/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdEFkZGl0aW9uYWxEZXRhaWxzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/ProductAttribute/cccccccc.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdEF0dHJpYnV0ZVxjY2NjY2NjYy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/ProductAttribute/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdEF0dHJpYnV0ZVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/ProductAttribute/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdEF0dHJpYnV0ZVxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/ProductAttribute/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdEF0dHJpYnV0ZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/ProductAttribute/IndexProductAttribute.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdEF0dHJpYnV0ZVxJbmRleFByb2R1Y3RBdHRyaWJ1dGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/ProductAttribute/_checkBoxList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdEF0dHJpYnV0ZVxfY2hlY2tCb3hMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/ProductAttribute/_varationForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdEF0dHJpYnV0ZVxfdmFyYXRpb25Gb3JtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/ProductImage/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdEltYWdlXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/ProductImage/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdEltYWdlXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/ProductImage/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdEltYWdlXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/ProductVariation/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFZhcmlhdGlvblxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/Product/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/Product/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/Product/Index1.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxJbmRleDEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/Product/IndexProd.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxJbmRleFByb2QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/Product/_checkBoxList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxfY2hlY2tCb3hMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/Product/_varationForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxfdmFyYXRpb25Gb3JtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/RolesManager/AddRoleToUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZXNNYW5hZ2VyXEFkZFJvbGVUb1VzZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/Shared/_LoginLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpbkxheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/Shared/_ProjectLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Qcm9qZWN0TGF5b3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/Slider/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2xpZGVyXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/Slider/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2xpZGVyXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/Slider/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2xpZGVyXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/SubClassificationBase/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViQ2xhc3NpZmljYXRpb25CYXNlXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/SubClassificationBase/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViQ2xhc3NpZmljYXRpb25CYXNlXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/SubClassificationBase/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViQ2xhc3NpZmljYXRpb25CYXNlXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/SubSubclassification/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViU3ViY2xhc3NpZmljYXRpb25cQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/SubSubclassification/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViU3ViY2xhc3NpZmljYXRpb25cRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/SubSubclassification/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViU3ViY2xhc3NpZmljYXRpb25cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/TaxConfiguration/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGF4Q29uZmlndXJhdGlvblxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/TaxConfiguration/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGF4Q29uZmlndXJhdGlvblxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/TaxConfiguration/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGF4Q29uZmlndXJhdGlvblxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/UserAccess/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlckFjY2Vzc1xMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-b8ez4w65im

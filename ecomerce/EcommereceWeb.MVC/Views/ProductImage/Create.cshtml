@@ -1,0 +1,139 @@
+﻿@model ProductImageDto
+<style>
+    #Image_Image {
+        border-radius: 13% !important;
+        height: 10rem;
+        width: 10rem;
+        background-repeat: no-repeat;
+        background-size: cover;
+        object-position: 50% 50%;
+    }
+
+    #img-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .list-item {
+        list-style-type: none;
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+        cursor: pointer;
+    }
+    .galary{
+        margin: 5px;
+        width: 100px;
+        height: 111px;
+        border-radius: 10px;
+    }
+    #preview{
+        padding: 35px;
+    }
+</style>
+<div class="content-body">
+    <!-- login page start -->
+
+    <section id="auth-login" class="row flexbox-container">
+        @if (TempData["err"] != null)
+        {
+            <span class="alert alert-danger">@TempData["err"]</span>
+        }
+        @if (TempData["suc"] != null)
+        {
+            <span class="alert alert-success">@TempData["suc"]</span>
+        }
+        
+        <div class="col-xl-8 col-11">
+            <div class="card bg-authentication mb-0">
+                <div class="row m-0">
+                    <!-- left section-login -->
+                    <div class="col-md-6 col-12 px-0">
+                        <div class="card disable-rounded-right mb-0 p-2 h-100 d-flex justify-content-center">
+                            <div class="card-header pb-1">
+                                <div class="card-title">
+                                    <h4 class="text-center mb-2"> يا مرحبا في  سور المنتج</h4>
+                                </div>
+                            </div>
+                            <div class="card-body">
+
+                                <form asp-controller="ProductImage" asp-action="Create" method="post">
+                                   <input type="hidden" asp-for="ProductId" value="@Model.ProductId">
+                                    <input type="file" style="display:none" id="GalleryUpload" multiple>
+
+                                    <input type="hidden" name="Image1[]">
+                                    <div class="media mb-2" id="img-container">
+                                        <div class="mb-1">
+                                            <a class="mr-2" href="javascript:void(0);">
+                                                <img src="../../../app-assets/images/portrait/small/avatar-s-26.jpg" id="Image_Image" class="users-avatar-shadow rounded-circle" height="70" width="70">
+                                            </a>
+                                            <span id="errorUplod1" class="badge badge-light-danger"> </span>
+                                        </div>
+                                        <div>
+                                            <div class="media-body">
+                                                @* <h4 class="media-heading">Avatar</h4>*@
+                                                <div class="col-12 px-0 d-flex">
+                                                    <a id="fileBtn" class="btn btn-sm btn-primary mr-10">Change</a>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <span class="alert alert-danger errorUplod"></span>
+                                    </div>
+                                 
+
+
+                                    <button type="submit" class="btn btn-primary glow w-100 position-relative">اضافة<i id="icon-arrow" class="bx bx-right-arrow-alt"></i></button>
+                                    <br>
+                                    <br>
+                                    <a class="btn btn-primary glow w-100 position-relative" asp-controller="ProductAdditionalDetails" asp-action="Create" asp-route-productId="@Model.ProductId">next</a>
+                                </form>
+                                <hr>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- right section image -->
+                    <div class="col-md-6 d-md-block d-none text-center align-self-center p-3">
+                        <img class="img-fluid" src="~/app-assets/images/pages/login.png" alt="branding logo">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12">
+            <div class="row" id="preview">
+            </div>
+
+
+        </div>
+    </section>
+    <!-- login page ends -->
+
+</div>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script src="~/js/Gallery.js" asp-append-version="true"></script>
+    <script>
+        //start logo
+
+
+        $("#GalleryUpload").on('change', function () {
+            var files = $('#GalleryUpload').prop("files");
+            let folderName = "ProductImage";
+            console.log("ddddddddddddddddddddddddd");
+
+
+            GalleryUplodFile(files, folderName);
+        });
+
+
+        $('#fileBtn').click(function () { $('#GalleryUpload').trigger('click'); });
+
+    </script>
+
+}

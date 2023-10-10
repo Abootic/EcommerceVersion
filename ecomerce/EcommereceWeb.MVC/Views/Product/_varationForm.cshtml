@@ -1,0 +1,102 @@
+﻿@model ProductVariationDto
+<style>
+    #Image_Image {
+        border-radius: 13% !important;
+        height: 10rem;
+        width: 10rem;
+        background-repeat: no-repeat;
+        background-size: cover;
+        object-position: 50% 50%;
+    }
+
+    #img-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+</style>
+<div class="content-body">
+
+    <section id="auth-login" class="row flexbox-container">
+        @* <div class="col-xl-8 col-11">*@
+        @*<div class="card bg-authentication mb-0">*@
+        <div class="row m-0">
+            <!-- left section-login -->
+            <div class="col-md-12 col-12 px-0">
+
+
+                <form id="ProductVariationDto" method="post">
+                    <input type="hidden" id="ColorId" name="ColorId">
+
+
+                    <div class="row">
+                        <div class="col-8">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group mb-50">
+                                        <label class="text-bold-600" for="exampleInputEmail1">اسم </label>
+
+                                        <input type="text" class="form-control" id="name" name="ColorName" value="@Model.EnName" placeholder="اسم ">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group mb-50">
+                                        <label class="text-bold-600" asp-for="Quantity"> </label>
+
+                                        <input type="number" class="form-control" id="Quntatiy" name="Quantity" min="1" value="1">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group mb-50">
+                                        <label class="text-bold-600" asp-for="Price"> </label>
+
+                                        <input type="number" class="form-control" id="price" name="Price" min="0">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-4">
+                            <input type="file" style="display:none" id="upload">
+
+                            <input type="hidden" id="logoData" name="SizeName">
+                            <div class="media mb-2" id="img-container">
+                                <div class="mb-1">
+                                    <a class="mr-2" href="javascript:void(0);">
+                                        <img src="../../../app-assets/images/portrait/small/avatar-s-26.jpg" id="Image_Image" class="users-avatar-shadow rounded-circle" height="70" width="70">
+                                    </a>
+                                    <span id="errorUplod1" class="badge badge-light-danger"> </span>
+                                </div>
+                                <div>
+                                    <div class="media-body">
+                                        @* <h4 class="media-heading">Avatar</h4>*@
+                                        <div class="col-12 px-0 d-flex">
+                                            <a id="fileBtn" class="btn btn-sm btn-primary mr-10" style="color:#fff">اختار</a>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary glow w-100 position-relative" id="submit-btn">اضافة<i id="icon-arrow" class="bx bx-right-arrow-alt"></i></button>
+
+                    </div>
+
+                </form>
+
+
+            </div>
+            <!-- right section image -->
+            @*  <div class="col-md-6 d-md-block d-none text-center align-self-center p-3">
+            <img class="img-fluid" src="~/app-assets/images/pages/login.png" alt="branding logo">
+            </div>*@
+        </div>
+        @*     </div>*@
+        @*  </div>*@
+    </section>
+    <!-- login page ends -->
+
+</div>
+

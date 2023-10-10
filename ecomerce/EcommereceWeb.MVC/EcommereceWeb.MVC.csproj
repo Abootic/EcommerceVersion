@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>292e0873-dc77-42d5-9ecd-89e924e8bb28</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="Views\BasicClassification\Create.cshtml" />
+    <None Include="Views\BasicClassification\Edit.cshtml" />
+    <None Include="Views\BasicClassification\Index.cshtml" />
+    <None Include="Views\BasicClassification\Index1.cshtml" />
+    <None Include="Views\Brand\Create.cshtml" />
+    <None Include="Views\Brand\Edit.cshtml" />
+    <None Include="Views\Brand\Index.cshtml" />
+    <None Include="Views\MainClassification\Create.cshtml" />
+    <None Include="Views\MainClassification\Edit.cshtml" />
+    <None Include="Views\MainClassification\Index.cshtml" />
+    <None Include="Views\Slider\Create.cshtml" />
+    <None Include="Views\Slider\Edit.cshtml" />
+    <None Include="Views\Slider\Index.cshtml" />
+    <None Include="Views\SubClassificationBase\Create.cshtml" />
+    <None Include="Views\SubClassificationBase\Edit.cshtml" />
+    <None Include="Views\SubClassificationBase\Index.cshtml" />
+    <None Include="Views\SubSubclassification\Create.cshtml" />
+    <None Include="Views\SubSubclassification\Edit.cshtml" />
+    <None Include="Views\SubSubclassification\Index.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="7.1.0" />
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="8.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.10">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EcommereceWeb.Infrstraction\EcommereceWeb.Infrstraction.csproj" />
+  </ItemGroup>
+
+</Project>
