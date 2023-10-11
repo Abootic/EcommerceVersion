@@ -1,0 +1,30 @@
+﻿	<!--start Featured product-->
+@inject IServiceManager ServerManger
+@{
+	var res = await ServerManger.BrandService.GetAll();
+
+}
+
+<section class="py-4">
+	<div class="container">
+		<h3 class="d-none" style="color:black">Brands</h3>
+
+		@if (res.Data.Any())
+		{
+		<div class="brand-grid">
+			<div class="brands-shops owl-carousel owl-theme border">
+				@foreach(var item in res.Data){
+				<div class="item border-end">
+							<div class="p-4" style="height:65px">
+						<a>
+									<img src="../../Upload/Brand/@item.ImageUrl" class="img-fluid" alt="...">
+						</a>
+					</div>
+				</div>
+				}
+			</div>
+		</div>
+		}
+	</div>
+</section>
+<!--end brands-->

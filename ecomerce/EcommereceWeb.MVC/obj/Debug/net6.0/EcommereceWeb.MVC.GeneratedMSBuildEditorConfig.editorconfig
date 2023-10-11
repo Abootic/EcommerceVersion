@@ -28,6 +28,34 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxfQWRkVXNlclRvUm9sZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/AppHome/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/AppHome/_Advertisebanners.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwSG9tZVxfQWR2ZXJ0aXNlYmFubmVycy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/AppHome/_brand.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwSG9tZVxfYnJhbmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/AppHome/_categories.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwSG9tZVxfY2F0ZWdvcmllcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/AppHome/_Classification.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwSG9tZVxfQ2xhc3NpZmljYXRpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/AppHome/_newProduct.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwSG9tZVxfbmV3UHJvZHVjdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/AppHome/_Product.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwSG9tZVxfUHJvZHVjdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/AttributeItem/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXR0cmlidXRlSXRlbVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -252,6 +280,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/Shared/_AppLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BcHBMYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/Shared/_LoginLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpbkxheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -262,6 +294,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/Slider/AppIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2xpZGVyXEFwcEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/Slider/Create.cshtml]
