@@ -1,4 +1,6 @@
-﻿using EcommereceWeb.MVC.Controllers.Base;
+﻿using EcommereceWeb.Application.DTOs;
+using EcommereceWeb.MVC.Controllers.Base;
+using EcommereceWeb.MVC.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EcommereceWeb.MVC.Controllers
@@ -7,9 +9,42 @@ namespace EcommereceWeb.MVC.Controllers
     {
 		public async Task<IActionResult> Index()
         {
-		
-			return View();
-        }
+			ProductHomeVm productHomeVm = new ProductHomeVm();
+			productHomeVm.prodctListVms  = new List<ProdctListVm>();
+			productHomeVm.Slider = new List<SliderDto>();
+			var res =await ServiceManager.ProductService.GetAll();
+			if(res.Status.Succeeded)
+			{
+				foreach(var item in res.Data)
+				{
+
+					Console.WriteLine($"product idddddddddddddddddd   {item.Id}");
+					var respRODUCTvaration = await ServiceManager.ProductVariationService.Find(a => a.ProductId.Value == item.Id);
+					if(respRODUCTvaration.Status.Succeeded) {
+					foreach(var item2 in respRODUCTvaration.Data)
+						{
+							Console.WriteLine($"produt varrrrrrrrrrrrrr   {item2.Id}");
+							Console.WriteLine($"prodct id 22222222222   {item2.ProductId}");
+							var prodctListVm = new ProdctListVm
+							{
+								Id = item.Id,
+								Name = item.ArName,
+								description = item.ArDetails,
+								Price = item2.Price,
+								image = item.Logo,
+								discount = item.Discount
+							};
+							productHomeVm.prodctListVms.Add(prodctListVm);
+						}
+					}
+					
+					
+				}
+				return View(productHomeVm);
+
+			}
+			return View(productHomeVm);
+		}
 
 		public async Task<IActionResult> AppIndex()
 		{

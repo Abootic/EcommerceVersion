@@ -4,19 +4,21 @@
 	var res = await ServerManger.ProductService.GetAll();
 
 }
+@model ProductHomeVm
 <section class="py-4">
 	<div class="container">
 		<div class="separator pb-4">
 			<div class="line"></div>
-			<h5 class="mb-0 fw-bold separator-title">FEATURED PRODUCTS</h5>
+			<h5 class="mb-0 fw-bold separator-title">منتجاتنا </h5>
 			<div class="line"></div>
 		</div>
-		@if(res.Data.Any()){
+		@if(Model.prodctListVms.Any()){
 			
 		
 		<div class="product-grid">
 			<div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-4 row-cols-xxl-5 g-3 g-sm-4">
-				@foreach(var item in res.Data){
+					@foreach (var item in Model.prodctListVms)
+					{
 				<div class="col">
 					<div class="card" style="height:30rem">
 						<div class="position-relative overflow-hidden">
@@ -27,29 +29,30 @@
 								<a href="javascript:;" data-bs-toggle="modal" data-bs-target="#QuickViewProduct">Quick View</a>
 							</div>
 							<a href="javascript:;">
-										<img src="../../Upload/Product/@item.Logo" class="img-fluid" alt="...">
+										<img src="../../Upload/Product/@item.image" class="img-fluid" alt="...">
 							</a>
 						</div>
 						<div class="card-body px-0">
 							<div class="d-flex align-items-center justify-content-between">
 								<div class="">
-									<p class="mb-1 product-short-name">@item.ArName</p>
-									<h6 class="mb-0 fw-bold product-short-title">@item.ArDetails</h6>
+									<p class="mb-1 product-short-name">@item.Name</p>
+									<h6 class="mb-0 fw-bold product-short-title">@item.description</h6>
 								</div>
 								<div class="icon-wishlist">
 									<a href="javascript:;"><i class="bx bx-heart"></i></a>
 								</div>
 							</div>
-							<div class="cursor-pointer rating mt-2">
+						@*	<div class="cursor-pointer rating mt-2">
 								<i class="bx bxs-star text-warning"></i>
 								<i class="bx bxs-star text-warning"></i>
 								<i class="bx bxs-star text-warning"></i>
 								<i class="bx bxs-star text-warning"></i>
 								<i class="bx bxs-star text-warning"></i>
-							</div>
+							</div>*@
 							<div class="product-price d-flex align-items-center justify-content-start gap-2 mt-2">
-								<div class="h6 fw-light fw-bold text-secondary text-decoration-line-through">$59.00</div>
-								<div class="h6 fw-bold">$40.56</div>
+								@*<div class="h6 fw-light fw-bold text-secondary text-decoration-line-through">@item.Price</div>*@
+
+										<div class="h6 fw-bold">@item.Price</div>
 							@*	<div class="h6 fw-bold">$48.00</div>*@
 							</div>
 						</div>
@@ -58,7 +61,12 @@
 				}
 			</div><!--end row-->
 
-		</div>}
+			</div>
+		}
+		else
+		{
+			<div class="alert alert-danger">no data</div>
+		}
 	</div>
 </section>
 <!--end Featured product-->
