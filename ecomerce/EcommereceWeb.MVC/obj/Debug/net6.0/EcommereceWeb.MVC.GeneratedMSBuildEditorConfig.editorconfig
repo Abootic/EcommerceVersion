@@ -56,6 +56,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwSG9tZVxfUHJvZHVjdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/AppHome/_ProductDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwSG9tZVxfUHJvZHVjdERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/AppProductDetails/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwUHJvZHVjdERldGFpbHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/wejo/verison/v10/Ecommerce-main/ecomerce/EcommereceWeb.MVC/Views/AttributeItem/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXR0cmlidXRlSXRlbVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

@@ -7,9 +7,11 @@ namespace EcommereceWeb.MVC.Controllers
 {
     public class AppHomeController : BaseMVCController
     {
+
 		public async Task<IActionResult> Index()
         {
 			ProductHomeVm productHomeVm = new ProductHomeVm();
+			productHomeVm.productDetails=new ProductDetailsVM();
 			productHomeVm.prodctListVms  = new List<ProdctListVm>();
 			productHomeVm.Slider = new List<SliderDto>();
 			var res =await ServiceManager.ProductService.GetAll();
@@ -56,6 +58,24 @@ namespace EcommereceWeb.MVC.Controllers
 			}
 			return View();
 
+		}
+		public async Task<IActionResult> ProducrDetails(int productId)
+		{
+
+			var product = await ServiceManager.ProductService.GetById(productId);
+			if (product.Status.Succeeded)
+			{
+				var resProductVaration = await ServiceManager.ProductVariationService.Find(a => a.ProductId == product.Data.Id);
+				if (resProductVaration.Status.Succeeded)
+				{
+					foreach(var item in resProductVaration.Data)
+					{
+
+					}
+				}
+				
+			}
+			return View();
 		}
 	}
 }

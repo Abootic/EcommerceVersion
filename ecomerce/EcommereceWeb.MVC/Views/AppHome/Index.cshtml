@@ -29,6 +29,40 @@
 							<!--start brands-->
 							<partial name="_brand">
 							<!--end brands-->
+							<!-- start product details-->
+								<div class="modal fade" id="QuickViewProduct">
+
+								<partial name="_ProductDetails">
+								</div>
+							<!-- end product details-->
 
 </div>
 </div>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+	<script>  
+	function getproductDetails(pid){
+			jQuery.ajax({
+				method: "get",
+				url: url,
+				data: { "id": pid },
+				contentType: false,
+				beforeSend: function () {},
+				success: function (res) {
+
+					$("QuickViewProduct").html(res);
+
+
+				},
+				error: function (ex) {
+					alert("errrrrrrrrrr  " + ex.responseText);
+				}
+			});
+
+	}
+	</script>
+}
