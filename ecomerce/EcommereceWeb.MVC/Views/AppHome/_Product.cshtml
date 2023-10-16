@@ -17,26 +17,31 @@
 		
 		<div class="product-grid">
 			<div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-4 row-cols-xxl-5 g-3 g-sm-4">
-					@foreach (var item in Model.prodctListVms)
+				
+					@for(int i=0;i< Model.prodctListVms.Count();i++)
 					{
 				<div class="col">
 					<div class="card" style="height:30rem">
 						<div class="position-relative overflow-hidden">
 							<div class="add-cart position-absolute top-0 end-0 mt-3 me-3">
-								<a href="javascript:;"><i class='bx bx-cart-add'></i></a>
+										<a onclick='AddTocart(@i,"name",@Model.prodctListVms[i].Price,"../../Upload/Product/@Model.prodctListVms[i].image",1)'><i class='bx bx-cart-add'></i></a>
 							</div>
 							<div class="quick-view position-absolute start-0 bottom-0 end-0">
 								<a href="javascript:;" data-bs-toggle="modal" data-bs-target="#QuickViewProduct">Quick View</a>
 							</div>
 							<a href="javascript:;">
-										<img src="../../Upload/Product/@item.image" class="img-fluid" alt="...">
+										<img src="../../Upload/Product/@Model.prodctListVms[i].image" class="img-fluid" alt="...">
 							</a>
 						</div>
 						<div class="card-body px-0">
 							<div class="d-flex align-items-center justify-content-between">
 								<div class="">
-									<p class="mb-1 product-short-name">@item.Name</p>
-									<h6 class="mb-0 fw-bold product-short-title">@item.description</h6>
+											<p class="mb-1 product-short-name">@Model.prodctListVms[i].productName</p>
+											@if (Model.prodctListVms[i].Taxtype != null)
+											{
+												<p class="mb-1 product-short-name">@Model.prodctListVms[i].Taxtype</p>
+											}
+											<h6 class="mb-0 fw-bold product-short-title">@Model.prodctListVms[i].description</h6>
 								</div>
 								<div class="icon-wishlist">
 									<a href="javascript:;"><i class="bx bx-heart"></i></a>
@@ -52,7 +57,7 @@
 							<div class="product-price d-flex align-items-center justify-content-start gap-2 mt-2">
 								@*<div class="h6 fw-light fw-bold text-secondary text-decoration-line-through">@item.Price</div>*@
 
-										<div class="h6 fw-bold">@item.Price</div>
+										<div class="h6 fw-bold">@Model.prodctListVms[i].Price</div>
 							@*	<div class="h6 fw-bold">$48.00</div>*@
 							</div>
 						</div>

@@ -12261,6 +12261,10 @@
       "PackagePath": "staticwebassets\\js\\UploadEditFile.js"
     },
     {
+      "Id": "D:\\wejo\\verison\\v10\\Ecommerce-main\\ecomerce\\EcommereceWeb.MVC\\wwwroot\\js\\cart.js",
+      "PackagePath": "staticwebassets\\js\\cart.js"
+    },
+    {
       "Id": "D:\\wejo\\verison\\v10\\Ecommerce-main\\ecomerce\\EcommereceWeb.MVC\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
